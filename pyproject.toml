@@ -35,9 +35,14 @@
 
 
 
+[tool.setuptools]
+	package-data.python_template = [ 'py.typed' ]
+
+
+
 [tool.pyright]
-typeCheckingMode = 'strict'
-reportUnknownLambdaType = false
+	typeCheckingMode = 'strict'
+	reportUnknownLambdaType = false
 
 
 
@@ -50,19 +55,19 @@ reportUnknownLambdaType = false
 	
 	
 	[tool.pylint.basic]
-	variable-naming-style = 'camelCase'
-	inlinevar-naming-style = 'camelCase'
-	function-naming-style = 'camelCase'
-	argument-naming-style = 'camelCase'
-	method-naming-style = 'camelCase'
-	class-attribute-naming-style = 'camelCase'
-	attr-naming-style = 'camelCase'
-	
-	# Defaults.
-	module-naming-style = 'snake_case'
-	class-naming-style = 'PascalCase'
-	const-naming-style = 'UPPER_CASE'
-	class-const-naming-style = 'UPPER_CASE'
-	
-	# Allow missing docstrings in tests.
-	no-docstring-rgx = '^__|.+Tests$|^test'
+		variable-naming-style = 'camelCase'
+		inlinevar-naming-style = 'camelCase'
+		function-naming-style = 'camelCase'
+		argument-naming-style = 'camelCase'
+		method-naming-style = 'camelCase'
+		class-attribute-naming-style = 'camelCase'
+		attr-naming-style = 'camelCase'
+		
+		# Defaults.
+		module-naming-style = 'snake_case'
+		class-naming-style = 'PascalCase'
+		const-naming-style = 'UPPER_CASE'
+		class-const-naming-style = 'UPPER_CASE'
+		
+		# Allow missing docstrings in tests.
+		no-docstring-rgx = '^__|.+Tests$|^test'
