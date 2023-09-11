@@ -1,14 +1,27 @@
 # Python Project Template
 Template for a Python application/library project.
 
+
 # Features
 - Type hints
 - CLI with `argparse`
+- Unit tests
 - Uses pyproject.toml
 - Development dependencies
 
+
 # Setup
 ```sh
-python -m venv env	# Create virtual environment.
-pip install -e .[dev]	# Install project in editable mode with development dependencies.
+# Create virtual environment.
+python -m venv env
+
+# Install project in editable mode with development dependencies.
+pip install -e .[dev]
+```
+
+
+# Running Tests
+```sh
+# Run tests.
+python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose
 ```

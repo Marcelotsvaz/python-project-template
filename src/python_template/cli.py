@@ -34,9 +34,9 @@ def main() -> None:
 	)
 	
 	# Actions.
-	testParser = subparsers.add_parser( 'test', help = test.__doc__ )
-	testParser.add_argument( 'message', help = 'Message that will be displayed.' )
-	testParser.set_defaults( action = test )
+	invertParser = subparsers.add_parser( 'invert', help = invert.__doc__ )
+	invertParser.add_argument( 'message', help = 'Message that will be displayed.' )
+	invertParser.set_defaults( action = invert )
 	
 	# Run.
 	args = parser.parse_args()
@@ -47,10 +47,10 @@ def main() -> None:
 # 
 # Actions.
 #-------------------------------------------------------------------------------
-def test( message: str, **_kwargs: Any ) -> None:
+def invert( message: str, **_kwargs: Any ) -> None:
 	'''
 	TODO CLI command docstring.
 	'''
 	
-	myClass = MyClass()
-	myClass.print( message )
+	inverted = MyClass.invertCase( message )
+	print( inverted )

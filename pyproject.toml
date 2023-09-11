@@ -63,3 +63,6 @@ reportUnknownLambdaType = false
 	class-naming-style = 'PascalCase'
 	const-naming-style = 'UPPER_CASE'
 	class-const-naming-style = 'UPPER_CASE'
+	
+	# Allow missing docstrings in tests.
+	no-docstring-rgx = '^__|.+Tests$|^test'
