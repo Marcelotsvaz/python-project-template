@@ -1,3 +1,15 @@
 {
-	
+	"configurations": [
+		{
+			"name": "Package entry point",
+			"type": "python",
+			"request": "launch",
+			"module": "python_template",
+			"args": [
+				"invert",
+				"hello world",
+			],
+			"justMyCode": false,
+		},
+	]
 }
