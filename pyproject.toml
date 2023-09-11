@@ -25,6 +25,9 @@
 	dependencies = [
 		# 'some-package >= 1.2.3',
 	]
+	optional-dependencies.dev = [
+		'pylint >= 2.17.5',
+	]
 	
 	
 	[project.scripts]
@@ -35,3 +38,28 @@
 [tool.pyright]
 typeCheckingMode = 'strict'
 reportUnknownLambdaType = false
+
+
+
+[tool.pylint]
+	format.indent-string = '	'
+	'messages control'.disable = [
+		'trailing-whitespace',
+		'missing-final-newline',
+	]
+	
+	
+	[tool.pylint.basic]
+	variable-naming-style = 'camelCase'
+	inlinevar-naming-style = 'camelCase'
+	function-naming-style = 'camelCase'
+	argument-naming-style = 'camelCase'
+	method-naming-style = 'camelCase'
+	class-attribute-naming-style = 'camelCase'
+	attr-naming-style = 'camelCase'
+	
+	# Defaults.
+	module-naming-style = 'snake_case'
+	class-naming-style = 'PascalCase'
+	const-naming-style = 'UPPER_CASE'
+	class-const-naming-style = 'UPPER_CASE'

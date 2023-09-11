@@ -1,3 +1,9 @@
+'''
+Expose functions as CLI commands.
+'''
+
+
+
 import argparse
 
 from typing import Any
@@ -41,7 +47,7 @@ def main() -> None:
 # 
 # Actions.
 #-------------------------------------------------------------------------------
-def test( message: str, **kwargs: Any ) -> None:
+def test( message: str, **_kwargs: Any ) -> None:
 	'''
 	TODO CLI command docstring.
 	'''
