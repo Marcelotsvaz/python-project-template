@@ -1,0 +1,37 @@
+[build-system]
+	build-backend = 'setuptools.build_meta'
+	requires = [
+		'setuptools == 68.2.0',
+		'wheel == 0.41.2',
+	]
+
+
+
+[project]
+	name = 'python-template'
+	version = '0.1.0'
+	description = 'Template for a Python application/library project.'
+	readme = 'readme.md'
+	license = { file = 'unlicense.txt' }
+	authors = [
+		{ name = 'Marcelo Vaz', email = 'marcelotsvaz@gmail.com' },
+	]
+	requires-python = '>= 3.11'
+	classifiers = [
+		'Programming Language :: Python :: 3',
+		'Operating System :: OS Independent',
+		'License :: OSI Approved :: The Unlicense (Unlicense)',
+	]
+	dependencies = [
+		# 'some-package >= 1.2.3',
+	]
+	
+	
+	[project.scripts]
+		python-template = 'python_template.cli:main'
+
+
+
+[tool.pyright]
+typeCheckingMode = 'strict'
+reportUnknownLambdaType = false
