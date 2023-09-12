@@ -1,5 +1,6 @@
 Change PYTHONPYCACHEPREFIX
 Coverage
+Documentation
 Check extra PyLint checks
 Check argparse return values
 Handle version

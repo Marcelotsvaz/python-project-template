@@ -2,8 +2,6 @@
 Expose functions as CLI commands.
 '''
 
-
-
 import argparse
 
 from typing import Any

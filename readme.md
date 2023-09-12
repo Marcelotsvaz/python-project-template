@@ -5,9 +5,11 @@ Template for a Python application/library project.
 # Features
 - Type hints
 - CLI with `argparse`
+- Examples
 - Unit tests
 - Uses pyproject.toml
 - Development dependencies
+- Debugging
 
 
 # Setup

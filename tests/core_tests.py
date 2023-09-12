@@ -2,8 +2,6 @@
 Unit tests for `python_template.core`.
 '''
 
-
-
 from unittest import TestCase
 
 from python_template.core import MyClass

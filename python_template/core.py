@@ -2,8 +2,6 @@
 TODO Module docstring.
 '''
 
-
-
 class MyClass:
 	'''
 	TODO Class docstring.
