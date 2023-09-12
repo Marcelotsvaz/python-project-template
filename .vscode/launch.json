@@ -11,5 +11,12 @@
 			],
 			"justMyCode": false,
 		},
+		{
+			"name": "Examples",
+			"type": "python",
+			"request": "launch",
+			"program": "examples/1.py",
+			"justMyCode": false,
+		},
 	]
 }
