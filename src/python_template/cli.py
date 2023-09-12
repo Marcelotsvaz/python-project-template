@@ -12,19 +12,19 @@ from python_template.core import MyClass
 
 
 
-def main() -> None:
+def main() -> int:
 	'''
 	CLI entry point.
 	'''
 	
-	# Parser init.
+	# Parser setup.
 	parser = argparse.ArgumentParser(
 		description = 'TODO',
 		add_help = False,
 	)
-	subparsers = parser.add_subparsers( title = 'action' )
+	subparsers = parser.add_subparsers( title = 'command' )
 	
-	parser.set_defaults( action = lambda **_: parser.print_usage() )
+	parser.set_defaults( command = lambda **_: parser.print_usage() )
 	parser.add_argument( '-h', '--help', action = 'help', help = 'Show this help message.' )
 	parser.add_argument(
 		'--version',
@@ -33,24 +33,27 @@ def main() -> None:
 		help = 'Show program\'s version number.',
 	)
 	
-	# Actions.
+	# Commands.
 	invertParser = subparsers.add_parser( 'invert', help = invert.__doc__ )
 	invertParser.add_argument( 'message', help = 'Message that will be displayed.' )
-	invertParser.set_defaults( action = invert )
+	invertParser.set_defaults( command = invert )
 	
 	# Run.
 	args = parser.parse_args()
-	args.action( **vars( args ) )
+	
+	return args.command( **vars( args ) )
 
 
 
 # 
 # Actions.
 #-------------------------------------------------------------------------------
-def invert( message: str, **_kwargs: Any ) -> None:
+def invert( message: str, **_kwargs: Any ) -> int:
 	'''
 	TODO CLI command docstring.
 	'''
 	
 	inverted = MyClass.invertCase( message )
 	print( inverted )
+	
+	return 0
