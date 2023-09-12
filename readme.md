@@ -13,7 +13,7 @@ Template for a Python application/library project.
 # Setup
 ```sh
 # Create virtual environment.
-python -m venv env
+python -m venv .venv
 
 # Install project in editable mode with development dependencies.
 pip install -e .[dev]

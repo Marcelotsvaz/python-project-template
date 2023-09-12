@@ -36,6 +36,7 @@
 
 
 [tool.setuptools]
+	packages.find.include = [ 'python_template' ] 
 	package-data.python_template = [ 'py.typed' ]
 
 
