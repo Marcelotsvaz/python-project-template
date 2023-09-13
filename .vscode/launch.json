@@ -1,4 +1,6 @@
 {
+	"version": "0.2.0",
+	
 	"configurations": [
 		{
 			"name": "Package entry point",
@@ -12,11 +14,18 @@
 			"justMyCode": false,
 		},
 		{
+			"name": "Tests",
+			"type": "python",
+			"request": "launch",
+			"purpose": [ "debug-test" ],
+			"justMyCode": false,
+		},
+		{
 			"name": "Examples",
 			"type": "python",
 			"request": "launch",
-			"program": "examples/1.py",
+			"program": "examples/example1.py",
 			"justMyCode": false,
 		},
-	]
+	],
 }
