@@ -1,2 +1,3 @@
+/.staging/
 /.venv/
 **/__pycache__/

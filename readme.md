@@ -7,6 +7,7 @@ Template for a Python application/library project.
 - CLI with `argparse`
 - Examples
 - Unit tests
+- Code coverage
 - Uses pyproject.toml
 - Development dependencies
 - Debugging
@@ -25,5 +26,5 @@ pip install -e .[dev]
 # Running Tests
 ```sh
 # Run tests.
-python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose
+coverage run -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose && coverage report
 ```
