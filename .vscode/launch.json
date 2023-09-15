@@ -12,6 +12,10 @@
 				"hello world",
 			],
 			"justMyCode": false,
+			"variablePresentation": {
+				"class": "inline",
+				"function": "inline",
+			},
 		},
 		{
 			"name": "Tests",
@@ -19,6 +23,10 @@
 			"request": "launch",
 			"purpose": [ "debug-test" ],
 			"justMyCode": false,
+			"variablePresentation": {
+				"class": "inline",
+				"function": "inline",
+			},
 		},
 		{
 			"name": "Examples",
@@ -26,6 +34,10 @@
 			"request": "launch",
 			"program": "examples/example1.py",
 			"justMyCode": false,
+			"variablePresentation": {
+				"class": "inline",
+				"function": "inline",
+			},
 		},
 	],
 }

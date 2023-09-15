@@ -1,5 +1,5 @@
 '''
-TODO Example 1.
+Example 1.
 '''
 
 from python_template.core import MyClass
