@@ -16,10 +16,17 @@ python -m venv --upgrade-deps .venv
 pip install -e .[dev]
 ```
 
+```sh
+pdm add django
+pdm add --group json jsons
+pdm add --dev pylint
+pdm install
+pdm build
+```
+
 
 ## Uses pyproject.toml
-Uses [PEP 518](https://peps.python.org/pep-0518/ 'PEP 518 - Specifying Minimum Build System Requirements for Python Projects') and 
-[PEP 621](https://peps.python.org/pep-0621/ 'PEP 621 - Storing project metadata in pyproject.toml').
+Uses [PEP 518](https://peps.python.org/pep-0518/ 'PEP 518 - Specifying Minimum Build System Requirements for Python Projects') and [PEP 621](https://peps.python.org/pep-0621/ 'PEP 621 - Storing project metadata in pyproject.toml').
 
 
 ## Type Hints
