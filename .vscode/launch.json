@@ -18,10 +18,10 @@
 			},
 		},
 		{
-			"name": "Tests",
+			"name": "Examples",
 			"type": "python",
 			"request": "launch",
-			"purpose": [ "debug-test" ],
+			"program": "examples/example1.py",
 			"justMyCode": false,
 			"variablePresentation": {
 				"class": "inline",
@@ -29,11 +29,12 @@
 			},
 		},
 		{
-			"name": "Examples",
+			"name": "Tests",
 			"type": "python",
 			"request": "launch",
-			"program": "examples/example1.py",
+			"purpose": [ "debug-test" ],
 			"justMyCode": false,
+			"presentation": { "hidden": true },
 			"variablePresentation": {
 				"class": "inline",
 				"function": "inline",

@@ -44,7 +44,7 @@ def main() -> int:
 
 
 # 
-# Actions.
+# Commands.
 #-------------------------------------------------------------------------------
 def invert( message: str, **_kwargs: Any ) -> int:
 	'''
