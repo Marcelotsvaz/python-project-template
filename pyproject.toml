@@ -46,6 +46,22 @@
 		'pdm-backend >= 2.1.6',
 		'pylint >= 2.17.5',
 	]
+	
+	
+	[tool.pdm.scripts]
+	test.composite = [ 'coverage', 'coverage-report' ]
+	test.help = 'Run tests with code coverage and show coverage report.'
+	
+	coverage.shell = 'coverage run -m ${unittestCommand}'
+	coverage.help = 'Run tests with code coverage.'
+	
+	coverage-report.cmd = 'coverage report'
+	coverage-report.help = 'Show coverage report.'
+	
+	test-only.shell = 'python -m ${unittestCommand}'
+	test-only.help = 'Run tests without code coverage.'
+	
+	_.env.unittestCommand = 'unittest discover --pattern *_tests.py --start-directory tests/ --verbose'
 
 
 
@@ -105,6 +121,7 @@
 [tool.coverage]
 	run.source_pkgs = [ 'python_template' ]
 	run.data_file = '.staging/coverage'
+	run.branch = true
 	
 	report.precision = 2
 	report.skip_covered = true

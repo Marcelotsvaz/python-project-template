@@ -17,6 +17,7 @@
 				"function": "inline",
 			},
 		},
+		
 		{
 			"name": "Examples",
 			"type": "python",
@@ -28,6 +29,7 @@
 				"function": "inline",
 			},
 		},
+		
 		{
 			"name": "Tests",
 			"type": "python",

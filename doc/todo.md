@@ -1,4 +1,5 @@
 Handle version
+dynamic = ["classifiers"]
 Get values from pyproject.toml # dynamic = ["version", "description"]
 Redundant export # allow-reexport-from-package public members?
 Check argparse return values

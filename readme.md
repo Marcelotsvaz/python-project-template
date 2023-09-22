@@ -57,20 +57,19 @@ pip install -e .[dev]
 
 
 ## Debugging
-Debugging with VS Code.
+TODO Debugging with VS Code.
 
 
-## Unit Tests
-```sh
-# Run tests.
-python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose
-```
-
-
-## Code Coverage
+## Unit Tests and Code Coverage
 ```sh
 # Run tests with coverage report.
+pdm test
+
+# Run directly.
 coverage run -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose && coverage report
+
+# Run directly without code coverage.
+python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --verbose
 ```
 
 

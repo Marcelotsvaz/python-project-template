@@ -1,0 +1,38 @@
+{
+	"version": "2.0.0",
+	
+	"tasks": [
+		{
+			"label": "PDM",
+			"type": "shell",
+			"command": "pdm ${input:pdm}",
+			"icon": {
+				"id": "symbol-function",
+				"color": "terminal.ansiMagenta"
+			},
+			"problemMatcher": []
+		}
+	],
+	
+	"inputs": [
+		{
+			"id": "pdm",
+			"type": "pickString",
+			"description": "Select command",
+			"options": [
+				{
+					"label": "🧪 Run tests",
+					"value": "test",
+				},
+				{
+					"label": "🛠️ Build",
+					"value": "build",
+				},
+				{
+					"label": "⬇️ Install (dev)",
+					"value": "install --dev",
+				},
+			],
+		},
+	],
+}
