@@ -4,18 +4,22 @@
 	description = 'Template for a Python application/library project.'
 	readme = 'readme.md'
 	license = { file = 'unlicense.txt' }
+	
 	authors = [
 		{ name = 'Marcelo Vaz', email = 'marcelotsvaz@gmail.com' },
 	]
-	requires-python = '>= 3.11'
+	
 	classifiers = [
 		'Programming Language :: Python :: 3',
 		'Operating System :: OS Independent',
 		'License :: OSI Approved :: The Unlicense (Unlicense)',
 	]
+	
+	requires-python = '>= 3.11'
 	dependencies = [
 		'django >= 4.2.5',	# Example.
 	]
+	
 	optional-dependencies.json = [
 		'jsons >= 1.6.3',	# Example.
 	]

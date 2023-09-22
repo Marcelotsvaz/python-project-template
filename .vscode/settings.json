@@ -1,4 +1,6 @@
 {
+	"python.analysis.diagnosticMode": "workspace",
+	
 	"python.testing.unittestEnabled": true,
 	"python.testing.unittestArgs": [
 		"--pattern=*_tests.py",
