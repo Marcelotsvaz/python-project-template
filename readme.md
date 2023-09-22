@@ -73,6 +73,11 @@ python -m unittest discover --pattern '*_tests.py' --start-directory tests/ --ve
 ```
 
 
+## Releases
+```sh
+git tag 1.0.0
+```
+
 
 # Contributing
 TODO

@@ -3,7 +3,7 @@ Expose functions as CLI commands.
 '''
 
 import argparse
-
+from importlib.metadata import version
 from typing import Any
 
 from python_template.core import MyClass
@@ -27,7 +27,7 @@ def main() -> int:
 	parser.add_argument(
 		'--version',
 		action = 'version',
-		version = f'{parser.prog} 1.0.0',
+		version = f'{parser.prog} {version( __package__ )}',
 		help = 'Show program\'s version number.',
 	)
 	

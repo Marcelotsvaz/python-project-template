@@ -1,6 +1,6 @@
 [project]
 	name = 'python-template'
-	version = '0.1.0'
+	dynamic = [ 'version' ]
 	description = 'Template for a Python application/library project.'
 	readme = 'readme.md'
 	license = { file = 'unlicense.txt' }
@@ -40,6 +40,7 @@
 
 
 [tool.pdm]
+	version.source = 'scm'
 	build.custom-hook = 'build/build_hooks.py'
 	dev-dependencies.dev = [
 		'coverage >= 7.3.1',
