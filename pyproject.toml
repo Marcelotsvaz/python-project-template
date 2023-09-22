@@ -57,9 +57,22 @@
 
 [tool.pylint]
 	indent-string = '	'
+	check-quote-consistency = true
+	ignore-long-lines = '# pyright: ignore'
+	
+	load-plugins = [
+		'pylint.extensions.docparams',
+		'pylint.extensions.overlapping_exceptions',
+	]
+	
+	enable = [
+		'useless-suppression',
+	]
+	
 	disable = [
 		'trailing-whitespace',
 		'missing-final-newline',
+		'logging-fstring-interpolation',
 		'too-few-public-methods',
 	]
 	

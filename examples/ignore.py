@@ -2,9 +2,12 @@
 How to ignore linting errors.
 '''
 
-invalidType: int = 1.0	# pyright: ignore [reportGeneralTypeIssues]
+# Pyright.
+invalidType: int = 'foo'	# pyright: ignore [reportGeneralTypeIssues]
 
-invalidName1 = 123	# pylint: disable = invalid-name
 
-# pylint: disable-next = invalid-name
-invalidName2 = 234
+
+# Pylint.
+invalidName = 'foo'	# pylint: disable = invalid-name
+# pylint: disable-next = f-string-without-interpolation, inconsistent-quotes
+inconsistentQuotes = f"foo"
