@@ -71,8 +71,9 @@
 #-------------------------------------------------------------------------------
 [tool.pyright]
 	typeCheckingMode = 'strict'
-	reportUnnecessaryTypeIgnoreComment = true
-	reportUnknownLambdaType = false
+	reportUnnecessaryTypeIgnoreComment = 'error'
+	reportMissingSuperCall = 'warning'
+	reportUnknownLambdaType = 'none'
 
 
 
