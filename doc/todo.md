@@ -1,4 +1,4 @@
-Redundant export # allow-reexport-from-package public members?
+Pylint --allow-reexport-from-package
 Check argparse return values
 Logging
 Documentation from docstrings

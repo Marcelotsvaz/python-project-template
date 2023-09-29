@@ -13,6 +13,7 @@
 		'Programming Language :: Python :: 3',
 		'Operating System :: OS Independent',
 		'License :: OSI Approved :: The Unlicense (Unlicense)',
+		# 'License :: Other/Proprietary License',
 	]
 	
 	requires-python = '>= 3.11'
@@ -71,6 +72,7 @@
 #-------------------------------------------------------------------------------
 [tool.pyright]
 	typeCheckingMode = 'strict'
+	reportMissingTypeStubs = 'none'
 	reportUnnecessaryTypeIgnoreComment = 'error'
 	reportMissingSuperCall = 'warning'
 	reportUnknownLambdaType = 'none'

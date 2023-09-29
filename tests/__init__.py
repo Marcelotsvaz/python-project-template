@@ -1,3 +1,3 @@
 '''
-Package containing all tests for python-template.
+Package containing all tests for python_template package.
 '''
