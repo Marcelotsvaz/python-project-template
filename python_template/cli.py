@@ -6,6 +6,7 @@ import argparse
 from importlib.metadata import version
 from typing import Any
 
+from python_template import __doc__ as packageDocstring
 from python_template.core import MyClass
 
 
@@ -17,7 +18,7 @@ def main() -> int:
 	
 	# Parser setup.
 	parser = argparse.ArgumentParser(
-		description = 'TODO',
+		description = packageDocstring,
 		add_help = False,
 	)
 	subparsers = parser.add_subparsers( title = 'command' )
@@ -32,7 +33,11 @@ def main() -> int:
 	)
 	
 	# Commands.
-	invertParser = subparsers.add_parser( 'invert', help = invert.__doc__ )
+	invertParser = subparsers.add_parser(
+		'invert',
+		help = invert.__doc__,
+		description = invert.__doc__,
+	)
 	invertParser.add_argument( 'message', help = 'Message that will be displayed.' )
 	invertParser.set_defaults( command = invert )
 	
