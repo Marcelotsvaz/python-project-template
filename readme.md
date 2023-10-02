@@ -1,8 +1,8 @@
-# Python Project Template
+# 🐍 Python Project Template
 Template for a Python application/library project.
 
 
-## Features
+## ✨ Features
 - Manage dependencies with [PDM](https://pdm.fming.dev/).
 - Stores metadata, build and tools configuration in `pyproject.toml`.
 - CLI with `argparse`.
