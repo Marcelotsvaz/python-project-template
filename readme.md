@@ -87,12 +87,21 @@ Resulting changes in `pyproject.toml`:
 ## Build and Release
 For a release, create a git tag first:
 ```sh
-git tag 1.1.0
+git tag 1.0.0
 ```
 
 Build wheel with PDM:
 ```sh
 pdm build
+```
+
+## Publish
+Publish to PyPI:
+```sh
+pdm config repository.pypi.username __token__
+pdm config repository.pypi.password pypi-token
+
+pdm publish
 ```
 
 

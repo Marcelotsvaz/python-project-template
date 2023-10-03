@@ -21,6 +21,10 @@
 			"description": "Select command",
 			"options": [
 				{
+					"label": "⬇️ Install (dev)",
+					"value": "install --dev",
+				},
+				{
 					"label": "🧪 Run tests",
 					"value": "test",
 				},
@@ -29,8 +33,8 @@
 					"value": "build",
 				},
 				{
-					"label": "⬇️ Install (dev)",
-					"value": "install --dev",
+					"label": "⬆️ Publish",
+					"value": "publish",
 				},
 			],
 		},
