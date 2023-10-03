@@ -98,11 +98,10 @@ pdm build
 ## Publish
 Publish to PyPI:
 ```sh
-pdm config repository.pypi.username __token__
-pdm config repository.pypi.password pypi-token
-
 pdm publish
 ```
+
+Install the [keyring](https://pypi.org/project/keyring/) package to save PyPI credentials in the system keyring.
 
 
 ## Contributing

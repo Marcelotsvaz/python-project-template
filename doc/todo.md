@@ -1,7 +1,6 @@
-Secret Service for PyPI
-Documentation
 GitLab CI/CD
 GitLab releases
+Documentation
 Changelog
 Documentation from docstrings
 	# accept-no-param-doc = false
@@ -9,6 +8,7 @@ Documentation from docstrings
 	# accept-no-return-doc = false
 	# accept-no-yields-doc = false
 	# default-docstring-type = 'sphinx', 'epytext', 'google', 'numpy', 'default'
+Shields
 
 Pylint --allow-reexport-from-package
 Update readme from Microsoft
