@@ -1,10 +1,10 @@
 '''
-Unit tests for `python_template.core`.
+Unit tests for `project_template.core`.
 '''
 
 from unittest import TestCase
 
-from python_template.core import MyClass
+from project_template.core import MyClass
 
 
 

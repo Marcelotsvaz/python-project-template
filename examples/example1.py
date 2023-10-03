@@ -2,7 +2,7 @@
 Example 1.
 '''
 
-from python_template.core import MyClass
+from project_template.core import MyClass
 
 
 

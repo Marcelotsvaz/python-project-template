@@ -6,8 +6,8 @@ import argparse
 from importlib.metadata import version
 from typing import Any
 
-from python_template import __doc__ as packageDocstring
-from python_template.core import MyClass
+from project_template import __doc__ as packageDocstring
+from project_template.core import MyClass
 
 
 

@@ -1,5 +1,5 @@
 # 🐍 Python Project Template
-Template for a Python application/library project.
+Template for a Python project.
 
 
 ## ✨ Features
@@ -14,12 +14,12 @@ Template for a Python application/library project.
 ## Installation
 Install from [PyPI](https://pypi.org/):
 ```sh
-pip install python-template
+pip install marcelotsvaz-python-project-template
 ```
 
 Install from wheel:
 ```sh
-pip install python_template-1.0.0-py3-none-any.whl
+pip install marcelotsvaz_python_project_template-1.0.0-py3-none-any.whl
 ```
 
 

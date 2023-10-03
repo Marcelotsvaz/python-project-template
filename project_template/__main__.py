@@ -2,7 +2,7 @@
 Package entry point.
 '''
 
-from python_template.cli import main
+from project_template.cli import main
 
 
 

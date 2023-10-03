@@ -6,7 +6,7 @@
 			"name": "Package entry point",
 			"type": "python",
 			"request": "launch",
-			"module": "python_template",
+			"module": "project_template",
 			"args": [
 				"invert",
 				"hello world",

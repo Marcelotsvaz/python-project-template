@@ -1,5 +1,5 @@
 [project]
-	name = 'python-template-build-tools'
+	name = 'marcelotsvaz-python-project-template-build-tools'
 	dynamic = [ 'version' ]
 	
 	

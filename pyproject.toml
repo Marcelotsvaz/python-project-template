@@ -1,7 +1,7 @@
 [project]
-	name = 'python-template'
+	name = 'marcelotsvaz-python-project-template'
 	dynamic = [ 'version' ]
-	description = 'Template for a Python application/library project.'
+	description = 'Template for a Python project.'
 	readme = 'readme.md'
 	license = { file = 'unlicense.txt' }
 	
@@ -27,16 +27,16 @@
 	
 	
 	[project.scripts]
-		python-template = 'python_template.cli:main'
+		project-template = 'project_template.cli:main'
 	
 	
 	[project.urls]
-	# homepage = 'TODO: GitLab Pages'
-	# documentation = 'TODO: readthedocs'
-	# changelog = ''
-	issues = 'https://gitlab.com/marcelotsvaz/python-project-template/-/issues'
-	source = 'https://gitlab.com/marcelotsvaz/python-project-template'
-	# donate = ''
+		# homepage = 'TODO: GitLab Pages'
+		# documentation = 'TODO: readthedocs'
+		# changelog = ''
+		issues = 'https://gitlab.com/marcelotsvaz/python-project-template/-/issues'
+		source = 'https://gitlab.com/marcelotsvaz/python-project-template'
+		# donate = ''
 
 
 
@@ -63,19 +63,19 @@
 	
 	
 	[tool.pdm.scripts]
-	test.composite = [ 'coverage', 'coverage-report' ]
-	test.help = 'Run tests with code coverage and show coverage report.'
-	
-	coverage.shell = 'coverage run -m ${unittestCommand}'
-	coverage.help = 'Run tests with code coverage.'
-	
-	coverage-report.cmd = 'coverage report'
-	coverage-report.help = 'Show coverage report.'
-	
-	test-only.shell = 'python -m ${unittestCommand}'
-	test-only.help = 'Run tests without code coverage.'
-	
-	_.env.unittestCommand = 'unittest discover --pattern *_tests.py --start-directory tests/ --verbose'
+		test.composite = [ 'coverage', 'coverage-report' ]
+		test.help = 'Run tests with code coverage and show coverage report.'
+		
+		coverage.shell = 'coverage run -m ${unittestCommand}'
+		coverage.help = 'Run tests with code coverage.'
+		
+		coverage-report.cmd = 'coverage report'
+		coverage-report.help = 'Show coverage report.'
+		
+		test-only.shell = 'python -m ${unittestCommand}'
+		test-only.help = 'Run tests without code coverage.'
+		
+		_.env.unittestCommand = 'unittest discover --pattern *_tests.py --start-directory tests/ --verbose'
 
 
 
@@ -135,7 +135,7 @@
 
 
 [tool.coverage]
-	run.source_pkgs = [ 'python_template' ]
+	run.source_pkgs = [ 'project_template' ]
 	run.data_file = '.staging/coverage'
 	run.branch = true
 	
