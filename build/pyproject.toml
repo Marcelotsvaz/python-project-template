@@ -4,7 +4,7 @@
 	
 	
 	[project.entry-points]
-		pdm.example_plugin = 'pdm_plugins.frontend:example_plugin'
+		pdm.custom_dirs = 'pdm_plugins.frontend:customDirs'
 		'pdm.build.hook'.backend_hooks = 'pdm_plugins.backend:Hooks'
 
 

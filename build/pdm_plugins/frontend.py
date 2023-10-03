@@ -1,25 +1,58 @@
 '''
-TODO
+PDM frontend plugins.
 '''
 
-from pdm.cli.commands.base import BaseCommand
+from argparse import ArgumentParser, Namespace
+
+from pdm.cli.commands import build, publish
 from pdm.core import Core
+from pdm.project import Project
 
 
 
-def example_plugin( core: Core ):
+def customDirs( core: Core ) -> None:
 	'''
-	TODO
-	'''
-	
-	core.register_command( HelloCommand, 'hello' )
-
-
-
-class HelloCommand( BaseCommand ):
-	'''
-	TODO
+	Change `build` and `dist` directories.
 	'''
 	
-	def handle( self, project, options ):
-		print( 'Hello world!' )
+	core.register_command( BuildCommand )
+	core.register_command( PublishCommand )
+
+
+
+class BuildCommand( build.Command ):
+	'''
+	Build artifacts for distribution
+	'''
+	
+	name = 'build'
+	
+	
+	def add_arguments( self, parser: ArgumentParser ) -> None:
+		super().add_arguments( parser )
+		
+		for action in parser._actions:	# pylint: disable = protected-access
+			if action.dest == 'dest':
+				action.default = '.staging/dist'
+				break
+
+
+
+class PublishCommand( publish.Command ):
+	'''
+	Build and publish the project to PyPI
+	'''
+	
+	name = 'publish'
+	
+	
+	def handle( self, project: Project, options: Namespace ) -> None:
+		if options.build:
+			BuildCommand.do_build( project, dest = '.staging/dist' )
+		
+		options.build = False
+		
+		realProjectRoot = project.root
+		project.root = realProjectRoot.joinpath( '.staging' )
+		super().handle( project, options )
+		project.root = realProjectRoot
