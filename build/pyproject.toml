@@ -1,0 +1,22 @@
+[project]
+	name = 'python-template-build-tools'
+	dynamic = [ 'version' ]
+	
+	
+	[project.entry-points]
+		pdm.example_plugin = 'pdm_plugins.frontend:example_plugin'
+		'pdm.build.hook'.backend_hooks = 'pdm_plugins.backend:Hooks'
+
+
+
+# 
+# Building.
+#-------------------------------------------------------------------------------
+[build-system]
+	build-backend = 'pdm.backend'
+	requires = [ 'pdm-backend' ]
+
+
+
+[tool.pdm]
+	version.source = 'scm'
