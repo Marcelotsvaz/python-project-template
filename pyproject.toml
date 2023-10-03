@@ -31,8 +31,8 @@
 	
 	
 	[project.urls]
-		# homepage = 'TODO: GitLab Pages'
-		# documentation = 'TODO: readthedocs'
+		homepage = 'https://marcelotsvaz.gitlab.io/python-project-template/'
+		documentation = 'https://marcelotsvaz.gitlab.io/python-project-template/documentation/'
 		# changelog = ''
 		issues = 'https://gitlab.com/marcelotsvaz/python-project-template/-/issues'
 		source = 'https://gitlab.com/marcelotsvaz/python-project-template'

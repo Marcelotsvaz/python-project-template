@@ -1,5 +1,6 @@
-GitLab CI/CD
-GitLab releases
+CI/CD:
+	Releases
+	Tests
 Documentation
 Changelog
 Documentation from docstrings

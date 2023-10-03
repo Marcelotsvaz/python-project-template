@@ -1,0 +1,29 @@
+stages:
+  - release
+
+
+
+# 
+# Jobs.
+#-----------------------------------------------------------------------------------------------------------------------
+pages:
+    stage: release
+    
+    image: alpine:3.18.4
+    
+    variables:
+        pages: .staging/pages/
+    
+    script:
+      - mkdir -p ${pages}/documentation/
+      - cp doc/homepage/* ${pages}/
+      - cp doc/documentation/* ${pages}/documentation/
+    
+    publish: ${pages}
+    
+    artifacts:
+        paths:
+          - ${pages}
+    
+    rules:
+      - if: $CI_COMMIT_TAG
