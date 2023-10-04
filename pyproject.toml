@@ -1,7 +1,7 @@
 [project]
 	name = 'marcelotsvaz-python-project-template'
 	dynamic = [ 'version' ]
-	description = 'Template for a Python project.'
+	description = 'Template to quickly bootstrap Python projects.'
 	readme = 'readme.md'
 	license = { file = 'unlicense.txt' }
 	
