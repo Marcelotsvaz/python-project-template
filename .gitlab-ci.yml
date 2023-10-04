@@ -12,14 +12,14 @@ pages:
     image: alpine:3.18.4
     
     variables:
-        pages: .staging/pages/
+        pages: .staging/pages
     
     script:
       - mkdir -p ${pages}/documentation/
       - cp doc/homepage/* ${pages}/
       - cp doc/documentation/* ${pages}/documentation/
     
-    publish: ${pages}
+    publish: .staging/pages # No trailing slash.
     
     artifacts:
         paths:
