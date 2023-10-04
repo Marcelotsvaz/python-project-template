@@ -1,3 +1,4 @@
-/.staging/
+/.staging/**
+!/.staging/.gitkeep
 /.venv/
 **/__pycache__/
