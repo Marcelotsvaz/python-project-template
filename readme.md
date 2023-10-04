@@ -24,21 +24,21 @@ For a detailed description of all features check the [documentation](https://mar
 ## 📂 Project Structure
 ```
 📂 Python Project Template
-├─ 📁 .staging				Build artifacts and other ignored files
-├─ 📁 .vscode				VS Code configuration
-├─ 📁 build					Build scripts and local PDM plugins
-├─ 📂 doc					Documentation
-│  ├─ 📁 documentation		Sources for TODO documentation
-│  └─ 📁 homepage			Project homepage on GitLab Pages
-├─ 📁 examples				Examples
-├─ 📁 project_template		Main package
-├─ 📁 tests					Tests for the main package
-├─ 🔶 .gitignore			Git ignored files
-├─ 🦊 .gitlab-ci.yml		GitLab CI/CD configuration
-├─ 🔒 pdm.lock				Dependency lock file
-├─ ⚙️ pyproject.toml		Project metadata and tool configuration
-├─ 📄 readme.md				Readme (this file)
-└─ 📜 unlicense.txt			License
+├─ 📁 .staging              Build artifacts and other ignored files
+├─ 📁 .vscode               VS Code configuration
+├─ 📁 build                 Build scripts and local PDM plugins
+├─ 📂 doc                   Documentation
+│  ├─ 📁 documentation      Sources for TODO documentation
+│  └─ 📁 homepage           Project homepage on GitLab Pages
+├─ 📁 examples              Examples
+├─ 📁 project_template      Main package
+├─ 📁 tests                 Tests for the main package
+├─ 🔶 .gitignore            Git ignored files
+├─ 🦊 .gitlab-ci.yml        GitLab CI/CD configuration
+├─ 🔒 pdm.lock              Dependency lock file
+├─ ⚙️ pyproject.toml        Project metadata and tool configuration
+├─ 📄 readme.md             Readme (this file)
+└─ 📜 unlicense.txt         License
 ```
 
 
