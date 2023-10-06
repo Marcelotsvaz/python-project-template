@@ -1,4 +1,5 @@
 stages:
+  - build
   - release
 
 
@@ -6,6 +7,23 @@ stages:
 # 
 # Jobs.
 #-----------------------------------------------------------------------------------------------------------------------
+package:
+    stage: build
+    
+    image: python:3.11-alpine3.18
+    
+    interruptible: true
+    
+    script:
+      - pip install --no-cache-dir pdm
+      - pdm install --plugins
+      - pdm build
+    
+    artifacts:
+        paths:
+          - .staging/dist/
+
+
 pages:
     stage: release
     
