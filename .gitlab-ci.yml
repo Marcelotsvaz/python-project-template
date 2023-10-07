@@ -84,7 +84,7 @@ package:pypi:
       - pdm publish --no-build
 
 
-pages:gitlab:
+pages:
     extends: .release
     
     variables:
