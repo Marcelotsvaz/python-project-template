@@ -80,6 +80,10 @@ package:gitlab:
 package:pypi:
     extends: .release
     
+    variables:
+        PDM_PUBLISH_USERNAME: __token__
+        PDM_PUBLISH_PASSWORD: ${PYPI_API_TOKEN}
+    
     script:
       - pdm publish --no-build
 
