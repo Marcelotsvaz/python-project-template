@@ -1,6 +1,6 @@
 CI/CD:
 	Releases
-	Tests
+	Pylint code quality
 Documentation
 Changelog
 Documentation from docstrings

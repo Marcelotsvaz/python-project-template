@@ -69,7 +69,7 @@
 		coverage.shell = 'coverage run -m ${unittestCommand}'
 		coverage.help = 'Run tests with code coverage.'
 		
-		coverage-report.cmd = 'coverage report'
+		coverage-report.shell = 'coverage report; coverage xml'
 		coverage-report.help = 'Show coverage report.'
 		
 		test-only.shell = 'python -m ${unittestCommand}'

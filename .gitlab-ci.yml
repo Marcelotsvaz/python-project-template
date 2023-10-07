@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
   - release
 
 
@@ -8,6 +9,8 @@ variables:
 
 
 default:
+    image: python:3.11.6-alpine3.18
+    
     interruptible: true
     
     before_script:
@@ -23,8 +26,6 @@ default:
 package:
     stage: build
     
-    image: python:3.11-alpine3.18
-    
     script:
       - pdm build
     
@@ -33,10 +34,24 @@ package:
           - .staging/dist/
 
 
+test:
+    stage: test
+    
+    script:
+      - pdm sync
+      - pdm test
+    
+    coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/
+    
+    artifacts:
+        reports:
+            coverage_report:
+                coverage_format: cobertura
+                path: .staging/coverage.xml
+
+
 pages:
     stage: release
-    
-    image: alpine:3.18.4
     
     variables:
         pages: .staging/pages
