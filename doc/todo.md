@@ -1,3 +1,5 @@
+Add comments to CI/CD jobs.
+Move pages job to build?
 Add wheel to release
 Add PyPI link to release
 Pylint code quality on GitLab

@@ -65,14 +65,26 @@ test:
       - if: $CI_COMMIT_TAG
 
 
-pypi:
+package:gitlab:
+    extends: .release
+    
+    variables:
+        PDM_PUBLISH_REPO: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi
+        PDM_PUBLISH_USERNAME: gitlab-ci-token
+        PDM_PUBLISH_PASSWORD: ${CI_JOB_TOKEN}
+    
+    script:
+      - pdm publish --no-build
+
+
+package:pypi:
     extends: .release
     
     script:
       - pdm publish --no-build
 
 
-pages:
+pages:gitlab:
     extends: .release
     
     variables:
@@ -90,7 +102,7 @@ pages:
           - *pages
 
 
-gitlab:
+release:gitlab:
     extends: .release
     
     image: registry.gitlab.com/gitlab-org/release-cli:latest
