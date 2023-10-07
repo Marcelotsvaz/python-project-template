@@ -6,6 +6,7 @@ Pylint code quality on GitLab
 Document PDM_PUBLISH_USERNAME and PDM_PUBLISH_PASSWORD
 Documentation
 Changelog
+Better development workflow for GitLab; Local runner?
 Documentation from docstrings
 	# accept-no-param-doc = false
 	# accept-no-raise-doc = false
@@ -13,6 +14,7 @@ Documentation from docstrings
 	# accept-no-yields-doc = false
 	# default-docstring-type = 'sphinx', 'epytext', 'google', 'numpy', 'default'
 Shields
+Sign commits
 
 Pylint --allow-reexport-from-package
 Update readme from Microsoft
