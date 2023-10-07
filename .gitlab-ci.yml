@@ -1,7 +1,7 @@
 stages:
   - build
   - test
-  - release
+  - publish
 
 
 variables:
@@ -29,10 +29,35 @@ package:
     
     script:
       - pdm build
+      
+      # Get data for link in GitLab release.
+      - cd .staging/dist/
+      - printf 'wheelName=%s\n' *.whl >> ../package.env
+      - echo wheelHash=$(sha256sum *.whl | cut -d ' ' -f 1 ) >> ../package.env
+      - printf 'sdistName=%s\n' *.tar.gz >> ../package.env
+      - echo sdistHash=$(sha256sum *.tar.gz | cut -d ' ' -f 1 ) >> ../package.env
     
     artifacts:
         paths:
           - .staging/dist/
+        reports:
+            dotenv: .staging/package.env
+
+
+pages:gitlab:
+    stage: build
+    
+    variables:
+        pages: &pages .staging/pages
+    
+    script:
+      - mkdir -p ${pages}/documentation/
+      - cp doc/homepage/* ${pages}/
+      - cp doc/documentation/* ${pages}/documentation/
+    
+    artifacts:
+        paths:
+          - *pages
 
 
 
@@ -57,17 +82,17 @@ test:
 
 
 # 
-# Release jobs.
+# Publish jobs.
 #---------------------------------------------------------------------------------------------------
-.release:
-    stage: release
+.publish:
+    stage: publish
     
     rules:
       - if: $CI_COMMIT_TAG
 
 
 package:gitlab:
-    extends: .release
+    extends: .publish
     
     variables:
         PDM_PUBLISH_REPO: ${gitlabPypiUrl}
@@ -76,19 +101,10 @@ package:gitlab:
     
     script:
       - pdm publish --no-build
-      - cd .staging/dist/
-      - printf 'wheelName=%s\n' *.whl >> ../package.env
-      - echo wheelHash=$(sha256sum *.whl | cut -d ' ' -f 1 ) >> ../package.env
-      - printf 'sdistName=%s\n' *.tar.gz >> ../package.env
-      - echo sdistHash=$(sha256sum *.tar.gz | cut -d ' ' -f 1 ) >> ../package.env
-    
-    artifacts:
-        reports:
-            dotenv: .staging/package.env
 
 
 package:pypi:
-    extends: .release
+    extends: .publish
     
     variables:
         PDM_PUBLISH_USERNAME: __token__
@@ -99,25 +115,16 @@ package:pypi:
 
 
 pages:
-    extends: .release
-    
-    variables:
-        pages: &pages .staging/pages
+    extends: .publish
     
     script:
-      - mkdir -p ${pages}/documentation/
-      - cp doc/homepage/* ${pages}/
-      - cp doc/documentation/* ${pages}/documentation/
+      - echo Publishing to GitLab Pages.
     
     publish: *pages # No trailing slash.
-    
-    artifacts:
-        paths:
-          - *pages
 
 
 release:gitlab:
-    extends: .release
+    extends: .publish
     
     image: registry.gitlab.com/gitlab-org/release-cli:latest
     
