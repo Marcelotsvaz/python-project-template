@@ -3,20 +3,29 @@ stages:
   - release
 
 
+variables:
+    PIP_ROOT_USER_ACTION: ignore  # Ignore pip warning when running as root.
+
+
+default:
+    interruptible: true
+    
+    before_script:
+      - apk add --no-cache git
+      - pip install --no-cache-dir pdm
+      - pdm install --plugins
+
+
 
 # 
 # Jobs.
-#-----------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------
 package:
     stage: build
     
     image: python:3.11-alpine3.18
     
-    interruptible: true
-    
     script:
-      - pip install --no-cache-dir pdm
-      - pdm install --plugins
       - pdm build
     
     artifacts:
