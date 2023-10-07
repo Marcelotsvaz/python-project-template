@@ -72,7 +72,6 @@ test:
       - pdm test
     
     coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/
-    
     artifacts:
         reports:
             coverage_report:
@@ -121,6 +120,9 @@ pages:
       - echo Publishing to GitLab Pages.
     
     publish: *pages # No trailing slash.
+    artifacts:
+        paths:
+          - *pages
 
 
 release:gitlab:
