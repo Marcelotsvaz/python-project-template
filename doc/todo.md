@@ -1,6 +1,7 @@
-CI/CD:
-	Releases
-	Pylint code quality
+Add wheel to release
+Add PyPI link to release
+Pylint code quality on GitLab
+Document PDM_PUBLISH_USERNAME and PDM_PUBLISH_PASSWORD
 Documentation
 Changelog
 Documentation from docstrings

@@ -50,6 +50,34 @@ test:
                 path: .staging/coverage.xml
 
 
+pypi:
+    stage: release
+    
+    script:
+      - pdm publish --no-build
+
+
+pages:
+    stage: release
+    
+    variables:
+        pages: &pages .staging/pages
+    
+    script:
+      - mkdir -p ${pages}/documentation/
+      - cp doc/homepage/* ${pages}/
+      - cp doc/documentation/* ${pages}/documentation/
+    
+    publish: *pages # No trailing slash.
+    
+    artifacts:
+        paths:
+          - *pages
+    
+    rules:
+      - if: $CI_COMMIT_TAG
+
+
 release:
     stage: release
     
@@ -62,28 +90,7 @@ release:
     
     release:
         tag_name: ${CI_COMMIT_TAG}
-        description: ${CI_COMMIT_TAG}   
-    
-    rules:
-      - if: $CI_COMMIT_TAG
-
-
-pages:
-    stage: release
-    
-    variables:
-        pages: .staging/pages
-    
-    script:
-      - mkdir -p ${pages}/documentation/
-      - cp doc/homepage/* ${pages}/
-      - cp doc/documentation/* ${pages}/documentation/
-    
-    publish: .staging/pages # No trailing slash.
-    
-    artifacts:
-        paths:
-          - ${pages}
+        description: ${CI_COMMIT_TAG}
     
     rules:
       - if: $CI_COMMIT_TAG
