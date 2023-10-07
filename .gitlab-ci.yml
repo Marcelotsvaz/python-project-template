@@ -84,7 +84,7 @@ package:gitlab:
     
     artifacts:
         reports:
-            dotenv: package.env
+            dotenv: .staging/package.env
 
 
 package:pypi:
@@ -132,7 +132,7 @@ release:gitlab:
         assets:
             links:
               - name: Package on PyPI
-                url: https://pypi.org/project/${packageName}/${CI_COMMIT_TAG}/
+                url: https://pypi.org/project/marcelotsvaz-python-project-template/${CI_COMMIT_TAG}/
                 link_type: other
               
               - name: Wheel
