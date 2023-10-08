@@ -38,6 +38,16 @@ default:
       - if: $CI_COMMIT_TAG
 
 
+.includedAnalyzers: &includedAnalyzers
+    # Run analyzers on all pipelines.
+    # Use YAML anchors because `extends` is already used in the base job.
+    
+    rules:
+      - when: on_success
+    
+    before_script: []
+
+
 
 # 
 # Build stage.
@@ -103,12 +113,16 @@ test:
                 path: .staging/coverage.xml
 
 
-semgrep-sast: {}
+semgrep-sast:
     # Analyze Python code using Semgrep.
+    
+    <<: *includedAnalyzers
 
 
 secret_detection:
     # Scan repository for secrets.
+    
+    <<: *includedAnalyzers
     
     variables:
         SECRET_DETECTION_HISTORIC_SCAN: 'true'
