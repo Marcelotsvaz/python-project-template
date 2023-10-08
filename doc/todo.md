@@ -1,6 +1,5 @@
-Add comments to CI/CD jobs.
 Pylint code quality on GitLab
-Document PDM_PUBLISH_USERNAME and PDM_PUBLISH_PASSWORD
+Document PYPI_API_TOKEN
 Documentation
 Changelog
 Better development workflow for GitLab; Local runner?

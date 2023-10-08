@@ -32,6 +32,8 @@ default:
 # Job templates.
 #---------------------------------------------------------------------------------------------------
 .releaseOnly:
+    # Only run release jobs on tag pipelines.
+    
     rules:
       - if: $CI_COMMIT_TAG
 
@@ -41,6 +43,8 @@ default:
 # Build stage.
 #---------------------------------------------------------------------------------------------------
 package:
+    # Build main package using PDM.
+    
     stage: build
     
     script:
@@ -61,6 +65,8 @@ package:
 
 
 pages:build:
+    # Build documentation using TODO.
+    
     stage: build
     
     variables:
@@ -81,6 +87,8 @@ pages:build:
 # Test stage.
 #---------------------------------------------------------------------------------------------------
 test:
+    # Run tests on main package.
+    
     stage: test
     
     script:
@@ -96,9 +104,12 @@ test:
 
 
 semgrep-sast: {}
+    # Analyze Python code using Semgrep.
 
 
 secret_detection:
+    # Scan repository for secrets.
+    
     variables:
         SECRET_DETECTION_HISTORIC_SCAN: 'true'
 
@@ -108,6 +119,8 @@ secret_detection:
 # Publish stage.
 #---------------------------------------------------------------------------------------------------
 package:gitlab:
+    # Publish main package to project's package repository.
+    
     extends: .releaseOnly
     stage: publish
     
@@ -121,6 +134,8 @@ package:gitlab:
 
 
 package:pypi:
+    # Publish main package to PyPI.
+    
     extends: .releaseOnly
     stage: publish
     
@@ -137,6 +152,8 @@ package:pypi:
 # Deploy stage.
 #---------------------------------------------------------------------------------------------------
 pages:
+    # Trigger deployment to GitLab Pages.
+    
     extends: .releaseOnly
     stage: deploy
     
@@ -147,7 +164,7 @@ pages:
         url: ${CI_PAGES_URL}
     
     script:
-      - echo Publishing to GitLab Pages.
+      - echo Deploying to GitLab Pages...
     
     publish: *pages # No trailing slash.
     artifacts:
@@ -160,6 +177,8 @@ pages:
 # Release stage.
 #---------------------------------------------------------------------------------------------------
 release:gitlab:
+    # Create GitLab release as last step in the pipeline.
+    
     extends: .releaseOnly
     stage: release
     
