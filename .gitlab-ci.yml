@@ -1,3 +1,8 @@
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+
+
 stages:
   - build
   - test
@@ -88,6 +93,14 @@ test:
             coverage_report:
                 coverage_format: cobertura
                 path: .staging/coverage.xml
+
+
+semgrep-sast: {}
+
+
+secret_detection:
+    variables:
+        SECRET_DETECTION_HISTORIC_SCAN: 'true'
 
 
 

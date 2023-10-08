@@ -1,7 +1,6 @@
+Pages needs
+Links and pages environment
 Add comments to CI/CD jobs.
-Move pages job to build?
-Add wheel to release
-Add PyPI link to release
 Pylint code quality on GitLab
 Document PDM_PUBLISH_USERNAME and PDM_PUBLISH_PASSWORD
 Documentation
@@ -25,3 +24,4 @@ Logging
 Auto formatting
 git pre-commit hooks
 VSCode devcontainer
+CI/CD Components: https://docs.gitlab.com/ee/ci/components/
