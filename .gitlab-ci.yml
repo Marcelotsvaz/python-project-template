@@ -60,7 +60,7 @@ package:
             dotenv: .staging/package.env
 
 
-pages:gitlab:
+pages:build:
     stage: build
     
     variables:
@@ -139,6 +139,8 @@ package:pypi:
 pages:
     extends: .releaseOnly
     stage: deploy
+    
+    needs: [ pages:build ]
     
     script:
       - echo Publishing to GitLab Pages.

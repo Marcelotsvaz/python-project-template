@@ -1,4 +1,3 @@
-Pages needs
 Links and pages environment
 Add comments to CI/CD jobs.
 Pylint code quality on GitLab
