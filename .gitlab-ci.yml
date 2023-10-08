@@ -142,6 +142,10 @@ pages:
     
     needs: [ pages:build ]
     
+    environment:
+        name: pages
+        url: ${CI_PAGES_URL}
+    
     script:
       - echo Publishing to GitLab Pages.
     
@@ -171,9 +175,11 @@ release:gitlab:
         description: ${CI_COMMIT_TAG}
         assets:
             links:
+              - name: Documentation
+                url: ${CI_PAGES_URL}
+              
               - name: Package on PyPI
                 url: https://pypi.org/project/marcelotsvaz-python-project-template/${CI_COMMIT_TAG}/
-                link_type: other
               
               - name: Wheel
                 url: ${gitlabPypiUrl}/files/${wheelHash}/${wheelName}

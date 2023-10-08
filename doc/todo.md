@@ -1,4 +1,3 @@
-Links and pages environment
 Add comments to CI/CD jobs.
 Pylint code quality on GitLab
 Document PDM_PUBLISH_USERNAME and PDM_PUBLISH_PASSWORD
