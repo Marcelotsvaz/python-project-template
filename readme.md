@@ -1,3 +1,9 @@
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline-status/marcelotsvaz%2Fpython-project-template?logo=gitlab&label=Build)](https://gitlab.com/marcelotsvaz/python-project-template/-/pipelines/latest)
+[![Code coverage](https://img.shields.io/gitlab/pipeline-coverage/marcelotsvaz%2Fpython-project-template?branch=main&label=Coverage)](https://gitlab.com/marcelotsvaz/python-project-template/-/pipelines/latest)
+[![GitLab release](https://img.shields.io/gitlab/v/release/marcelotsvaz%2Fpython-project-template?logo=gitlab&label=Release)](https://gitlab.com/marcelotsvaz/python-project-template/-/releases/permalink/latest)
+[![PyPI package](https://img.shields.io/pypi/v/marcelotsvaz-python-project-template?logo=python&logoColor=%23CCCCCC&label=PyPI)](https://pypi.org/project/marcelotsvaz-python-project-template/)
+
+
 # 🐍 Python Project Template
 Template to quickly bootstrap Python projects.
 
