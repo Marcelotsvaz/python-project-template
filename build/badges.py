@@ -10,31 +10,32 @@ from urllib.parse import urlencode, quote
 
 
 
+projectNamespace = 'marcelotsvaz/python-project-template'
 badges = [
 	# First line.
 	{
 		'badgeType': 'gitlab/pipeline-status',
-		'mainArgument': 'marcelotsvaz/python-project-template',
+		'mainArgument': projectNamespace,
 		'title': 'Gitlab pipeline status',
-		'target': 'https://gitlab.com/marcelotsvaz/python-project-template/-/pipelines/latest',
+		'target': f'https://gitlab.com/{projectNamespace}/-/pipelines/latest',
 		
 		'logo': 'gitlab',
 		'label': 'Build',
 	},
 	{
 		'badgeType': 'gitlab/pipeline-coverage',
-		'mainArgument': 'marcelotsvaz/python-project-template',
+		'mainArgument': projectNamespace,
 		'title': 'Code coverage',
-		'target': 'https://gitlab.com/marcelotsvaz/python-project-template/-/pipelines/latest',
+		'target': f'https://gitlab.com/{projectNamespace}/-/pipelines/latest',
 		
 		'branch': 'main',
 		'label': 'Coverage',
 	},
 	{
 		'badgeType': 'gitlab/v/release',
-		'mainArgument': 'marcelotsvaz/python-project-template',
+		'mainArgument': projectNamespace,
 		'title': 'GitLab release',
-		'target': 'https://gitlab.com/marcelotsvaz/python-project-template/-/releases/permalink/latest',
+		'target': f'https://gitlab.com/{projectNamespace}/-/releases/permalink/latest',
 		
 		'logo': 'gitlab',
 		'label': 'Release',
