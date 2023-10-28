@@ -2,6 +2,9 @@ stages:
   - build
   - test
 
+include:
+  - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
+
 
 variables:
     PIP_ROOT_USER_ACTION: ignore  # Ignore pip warning when running as root.
