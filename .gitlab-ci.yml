@@ -41,8 +41,8 @@ package:
       - printf 'sdistName=%s\n' *.tar.gz >> ../package.env
       - echo sdistHash=$(sha256sum *.tar.gz | cut -d ' ' -f 1 ) >> ../package.env
     
-    # rules:
-    #   - when: on_success
+    rules:
+      - when: on_success
     
     artifacts:
         paths:
