@@ -1,14 +1,6 @@
-include:
-  - template: Jobs/SAST.gitlab-ci.yml
-  - template: Jobs/Secret-Detection.gitlab-ci.yml
-
-
 stages:
   - build
   - test
-  - publish
-  - deploy
-  - release
 
 
 variables:
@@ -25,28 +17,6 @@ default:
       - pdm install --plugins
     
     interruptible: true
-
-
-
-# 
-# Job templates.
-#---------------------------------------------------------------------------------------------------
-.releaseOnly:
-    # Only run release jobs on tag pipelines.
-    
-    rules:
-      - if: $CI_COMMIT_TAG
-
-
-.includedAnalyzers: &includedAnalyzers
-    # Run analyzers on all pipelines.
-    # Use YAML anchors because `extends` is already used in the base job.
-    
-    rules:
-      - when: on_success
-    
-    before_script: []
-
 
 
 # 
@@ -66,6 +36,9 @@ package:
       - echo wheelHash=$(sha256sum *.whl | cut -d ' ' -f 1 ) >> ../package.env
       - printf 'sdistName=%s\n' *.tar.gz >> ../package.env
       - echo sdistHash=$(sha256sum *.tar.gz | cut -d ' ' -f 1 ) >> ../package.env
+    
+    rules:
+      - when: on_success
     
     artifacts:
         paths:
@@ -111,115 +84,3 @@ test:
             coverage_report:
                 coverage_format: cobertura
                 path: .staging/coverage.xml
-
-
-semgrep-sast:
-    # Analyze Python code using Semgrep.
-    
-    <<: *includedAnalyzers
-
-
-secret_detection:
-    # Scan repository for secrets.
-    
-    <<: *includedAnalyzers
-    
-    variables:
-        SECRET_DETECTION_HISTORIC_SCAN: 'true'
-
-
-
-# 
-# Publish stage.
-#---------------------------------------------------------------------------------------------------
-package:gitlab:
-    # Publish main package to project's package repository.
-    
-    extends: .releaseOnly
-    stage: publish
-    
-    variables:
-        PDM_PUBLISH_REPO: ${gitlabPypiUrl}
-        PDM_PUBLISH_USERNAME: gitlab-ci-token
-        PDM_PUBLISH_PASSWORD: ${CI_JOB_TOKEN}
-    
-    script:
-      - pdm publish --no-build
-
-
-package:pypi:
-    # Publish main package to PyPI.
-    
-    extends: .releaseOnly
-    stage: publish
-    
-    variables:
-        PDM_PUBLISH_USERNAME: __token__
-        PDM_PUBLISH_PASSWORD: ${PYPI_API_TOKEN}
-    
-    script:
-      - pdm publish --no-build
-
-
-
-# 
-# Deploy stage.
-#---------------------------------------------------------------------------------------------------
-pages:
-    # Trigger deployment to GitLab Pages.
-    
-    extends: .releaseOnly
-    stage: deploy
-    
-    needs: [ pages:build ]
-    
-    environment:
-        name: pages
-        url: ${CI_PAGES_URL}
-    
-    script:
-      - echo Deploying to GitLab Pages...
-    
-    publish: *pages # No trailing slash.
-    artifacts:
-        paths:
-          - *pages
-
-
-
-# 
-# Release stage.
-#---------------------------------------------------------------------------------------------------
-release:gitlab:
-    # Create GitLab release as last step in the pipeline.
-    
-    extends: .releaseOnly
-    stage: release
-    
-    image: registry.gitlab.com/gitlab-org/release-cli:latest
-    
-    before_script: []
-    
-    script:
-      - echo Creating new release...
-    
-    release:
-        tag_name: ${CI_COMMIT_TAG}
-        description: ${CI_COMMIT_TAG}
-        assets:
-            links:
-              - name: Documentation
-                url: ${CI_PAGES_URL}
-              
-              - name: Package on PyPI
-                url: https://pypi.org/project/marcelotsvaz-python-project-template/${CI_COMMIT_TAG}/
-              
-              - name: Wheel
-                url: ${gitlabPypiUrl}/files/${wheelHash}/${wheelName}
-                filepath: /${wheelName}
-                link_type: package
-              
-              - name: Source Distribution
-                url: ${gitlabPypiUrl}/files/${sdistHash}/${sdistName}
-                filepath: /${sdistName}
-                link_type: package
