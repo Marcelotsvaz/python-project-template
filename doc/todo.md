@@ -1,8 +1,10 @@
+Fix duplicate pipeline due to analyzers
+Fix PDM lockfile
 Documentation
 	Builder
 	Docstrings
 	PYPI_API_TOKEN
-Changelog
+Changelog https://keepachangelog.com/en/1.1.0/
 Pylint code quality on GitLab
 Sign commits
 Pylint --allow-reexport-from-package

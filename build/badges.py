@@ -68,9 +68,9 @@ badges = [
 	},
 	{
 		'badgeType': 'badge',
-		'mainArgument': 'Renovate-grey',
+		'mainArgument': 'Renovate-enabled-green',
 		'title': 'Renovate',
-		'target': 'https://github.com/renovatebot/renovate',
+		'target': f'https://gitlab.com/{projectNamespace}/-/issues/1',
 		
 		'logo': 'renovatebot',
 		'logoColor': '#007fa0',

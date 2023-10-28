@@ -38,8 +38,8 @@ def main() -> int:
 		help = invert.__doc__,
 		description = invert.__doc__,
 	)
-	invertParser.add_argument( 'message', help = 'Message that will be displayed.' )
 	invertParser.set_defaults( command = invert )
+	invertParser.add_argument( 'message', help = 'Message that will be displayed.' )
 	
 	# Run.
 	args = parser.parse_args()
