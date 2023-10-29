@@ -1,1 +1,2 @@
-pdm.lock -diff	# Hide in GitLab diff.
+# Hide in GitLab diff.
+pdm.lock -diff
