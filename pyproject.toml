@@ -18,11 +18,7 @@
 	
 	requires-python = '>= 3.11'
 	dependencies = [
-		'django >= 4.2.5',	# Example.
-	]
-	
-	optional-dependencies.json = [
-		'jsons >= 1.6.3',	# Example.
+		'django == 4.2.5',	# Example.
 	]
 	
 	
@@ -56,9 +52,9 @@
 	version.source = 'scm'
 	plugins = [ '-e ./build' ]
 	dev-dependencies.dev = [
-		'coverage >= 7.3.1',
-		'pdm-backend >= 2.1.6',
-		'pylint >= 2.17.5',
+		'coverage == 7.3.1',
+		'pdm-backend == 2.1.6',
+		'pylint == 2.17.5',
 	]
 	
 	

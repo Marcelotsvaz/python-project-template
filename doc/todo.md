@@ -1,5 +1,3 @@
-Fix duplicate pipeline due to analyzers
-Fix PDM lockfile
 Documentation
 	Builder
 	Docstrings
