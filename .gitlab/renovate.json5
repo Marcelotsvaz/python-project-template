@@ -1,4 +1,6 @@
 {
+	assignees: [ 'marcelotsvaz' ],
+	
 	extends: [
 		'config:best-practices',
 		'marcelotsvaz/renovate-runner:default.json5/default',
