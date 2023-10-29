@@ -1,6 +1,4 @@
 {
-	assignees: [ 'marcelotsvaz' ],
-	
 	extends: [
 		'config:best-practices',
 		'marcelotsvaz/renovate-runner:default.json5/default',
@@ -10,4 +8,6 @@
 		'marcelotsvaz/renovate-runner:default.json5/prettyUpdateType',
 		'marcelotsvaz/renovate-runner:default.json5/prettyDepType',
 	],
+	
+	assignees: [ 'marcelotsvaz' ],
 }
