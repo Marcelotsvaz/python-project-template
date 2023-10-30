@@ -25,8 +25,8 @@ default:
 # 
 # Build stage.
 #---------------------------------------------------------------------------------------------------
-package:
-    # Build main package using PDM.
+Python Package:
+    # Build package using PDM.
     
     extends: .buildStage
     
@@ -47,7 +47,7 @@ package:
             dotenv: .staging/package.env
 
 
-pages:build:
+Documentation:
     # Build documentation using TODO.
     
     extends: .buildStage
@@ -69,8 +69,8 @@ pages:build:
 # 
 # Test stage.
 #---------------------------------------------------------------------------------------------------
-test:
-    # Run tests on main package.
+Unit Tests:
+    # Run unit tests on package.
     
     extends: .testStage
     
@@ -90,8 +90,8 @@ test:
 # 
 # Deploy stage.
 #---------------------------------------------------------------------------------------------------
-package:gitlab:
-    # Publish main package to project's package repository.
+GitLab Package Registry:
+    # Publish package to project's package registry.
     
     extends: .deployStage
     
@@ -104,8 +104,8 @@ package:gitlab:
       - pdm publish --no-build
 
 
-package:pypi:
-    # Publish main package to PyPI.
+PyPI:
+    # Publish package to PyPI.
     
     extends: .deployStage
     
@@ -118,11 +118,11 @@ package:pypi:
 
 
 pages:
-    # Trigger deployment to GitLab Pages.
+    # Deploy documentation to GitLab Pages.
     
     extends: .deployStage
     
-    needs: [ pages:build ]
+    needs: [ Documentation ]
     
     environment:
         name: pages
@@ -138,7 +138,7 @@ pages:
 # 
 # Release stage.
 #---------------------------------------------------------------------------------------------------
-release:gitlab:
+GitLab Release:
     # Create GitLab release as last step in the pipeline.
     
     extends: .releaseStage
