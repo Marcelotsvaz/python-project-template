@@ -1,15 +1,8 @@
 include:
-  - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
-  - template: Jobs/SAST.gitlab-ci.yml
-  - template: Jobs/Secret-Detection.gitlab-ci.yml
-
-
-stages:
-  - build
-  - test
-  - publish
-  - deploy
-  - release
+  - component: gitlab.com/marcelotsvaz/gitlab/sane-workflow@main
+  - component: gitlab.com/marcelotsvaz/gitlab/stages@main
+  - component: gitlab.com/marcelotsvaz/gitlab/sast@main
+  - component: gitlab.com/marcelotsvaz/gitlab/secret-detection@main
 
 
 variables:
@@ -30,33 +23,12 @@ default:
 
 
 # 
-# Job templates.
-#---------------------------------------------------------------------------------------------------
-.releaseOnly:
-    # Only run release jobs on tag pipelines.
-    
-    rules:
-      - if: $CI_COMMIT_TAG
-
-
-.analyzers: &analyzers
-    # Run analyzers on all pipelines.
-    # Use YAML anchors because `extends` is already used in the base job.
-    
-    rules:
-      - when: on_success
-    
-    before_script: []
-
-
-
-# 
 # Build stage.
 #---------------------------------------------------------------------------------------------------
-package:
-    # Build main package using PDM.
+Python Package:
+    # Build package using PDM.
     
-    stage: build
+    extends: .buildStage
     
     script:
       - pdm build
@@ -75,10 +47,10 @@ package:
             dotenv: .staging/package.env
 
 
-pages:build:
+Documentation:
     # Build documentation using TODO.
     
-    stage: build
+    extends: .buildStage
     
     variables:
         pages: &pages .staging/pages
@@ -97,10 +69,10 @@ pages:build:
 # 
 # Test stage.
 #---------------------------------------------------------------------------------------------------
-test:
-    # Run tests on main package.
+Unit Tests:
+    # Run unit tests on package.
     
-    stage: test
+    extends: .testStage
     
     script:
       - pdm sync
@@ -114,30 +86,14 @@ test:
                 path: .staging/coverage.xml
 
 
-semgrep-sast:
-    # Analyze Python code using Semgrep.
-    
-    <<: *analyzers
-
-
-secret_detection:
-    # Scan repository for secrets.
-    
-    <<: *analyzers
-    
-    variables:
-        SECRET_DETECTION_HISTORIC_SCAN: 'true'
-
-
 
 # 
-# Publish stage.
+# Deploy stage.
 #---------------------------------------------------------------------------------------------------
-package:gitlab:
-    # Publish main package to project's package repository.
+GitLab Package Registry:
+    # Publish package to project's package registry.
     
-    extends: .releaseOnly
-    stage: publish
+    extends: .deployStage
     
     variables:
         PDM_PUBLISH_REPO: ${gitlabPypiUrl}
@@ -148,11 +104,10 @@ package:gitlab:
       - pdm publish --no-build
 
 
-package:pypi:
-    # Publish main package to PyPI.
+PyPI:
+    # Publish package to PyPI.
     
-    extends: .releaseOnly
-    stage: publish
+    extends: .deployStage
     
     variables:
         PDM_PUBLISH_USERNAME: __token__
@@ -162,24 +117,16 @@ package:pypi:
       - pdm publish --no-build
 
 
-
-# 
-# Deploy stage.
-#---------------------------------------------------------------------------------------------------
 pages:
-    # Trigger deployment to GitLab Pages.
+    # Deploy documentation to GitLab Pages.
     
-    extends: .releaseOnly
-    stage: deploy
+    extends: .deployStage
     
-    needs: [ pages:build ]
+    needs: [ Documentation ]
     
     environment:
         name: pages
         url: ${CI_PAGES_URL}
-    
-    script:
-      - echo Deploying to GitLab Pages...
     
     publish: *pages # No trailing slash.
     artifacts:
@@ -191,18 +138,14 @@ pages:
 # 
 # Release stage.
 #---------------------------------------------------------------------------------------------------
-release:gitlab:
+GitLab Release:
     # Create GitLab release as last step in the pipeline.
     
-    extends: .releaseOnly
-    stage: release
+    extends: .releaseStage
     
     image: registry.gitlab.com/gitlab-org/release-cli:latest@sha256:5a71acbadc47c1971100f5246b09f88ba09e84ebe7769e425475dce85245a2bf
     
     before_script: []
-    
-    script:
-      - echo Creating new release...
     
     release:
         tag_name: ${CI_COMMIT_TAG}

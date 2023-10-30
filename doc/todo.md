@@ -1,10 +1,13 @@
+GitLab pages direct access Try in MR https://marcelotsvaz.gitlab.io/-/python-project-template/-/jobs/5411316050/artifacts/.staging/pages/index.html
+Renovate group major peer dependencies
+Generate XML report for unittests
 Documentation
 	Builder
 	Docstrings
 	PYPI_API_TOKEN
 Changelog https://keepachangelog.com/en/1.1.0/
-Pylint code quality on GitLab
 Sign commits
+Pylint code quality on GitLab
 Pylint --allow-reexport-from-package
 Check argparse return values
 Format imports
