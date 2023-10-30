@@ -28,7 +28,7 @@ default:
 package:
     # Build main package using PDM.
     
-    extends: .build
+    extends: .buildStage
     
     script:
       - pdm build
@@ -50,7 +50,7 @@ package:
 pages:build:
     # Build documentation using TODO.
     
-    extends: .build
+    extends: .buildStage
     
     variables:
         pages: &pages .staging/pages
@@ -72,7 +72,7 @@ pages:build:
 test:
     # Run tests on main package.
     
-    extends: .test
+    extends: .testStage
     
     script:
       - pdm sync
@@ -93,7 +93,7 @@ test:
 package:gitlab:
     # Publish main package to project's package repository.
     
-    extends: .deploy
+    extends: .deployStage
     
     variables:
         PDM_PUBLISH_REPO: ${gitlabPypiUrl}
@@ -107,7 +107,7 @@ package:gitlab:
 package:pypi:
     # Publish main package to PyPI.
     
-    extends: .deploy
+    extends: .deployStage
     
     variables:
         PDM_PUBLISH_USERNAME: __token__
@@ -120,7 +120,7 @@ package:pypi:
 pages:
     # Trigger deployment to GitLab Pages.
     
-    extends: .deploy
+    extends: .deployStage
     
     needs: [ pages:build ]
     
@@ -141,7 +141,7 @@ pages:
 release:gitlab:
     # Create GitLab release as last step in the pipeline.
     
-    extends: .release
+    extends: .releaseStage
     
     image: registry.gitlab.com/gitlab-org/release-cli:latest@sha256:5a71acbadc47c1971100f5246b09f88ba09e84ebe7769e425475dce85245a2bf
     
