@@ -1,4 +1,4 @@
-GitLab pages direct access Try in MR
+GitLab pages direct access Try in MR https://marcelotsvaz.gitlab.io/-/python-project-template/-/jobs/5411316050/artifacts/.staging/pages/index.html
 Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation
