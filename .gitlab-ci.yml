@@ -1,8 +1,8 @@
 include:
   - component: gitlab.com/marcelotsvaz/gitlab/sane-workflow@main
   - component: gitlab.com/marcelotsvaz/gitlab/stages@main
-  # - template: Jobs/SAST.gitlab-ci.yml
-  # - template: Jobs/Secret-Detection.gitlab-ci.yml
+  - component: gitlab.com/marcelotsvaz/gitlab/sast@main
+  - component: gitlab.com/marcelotsvaz/gitlab/secret-detection@main
 
 
 variables:
@@ -19,20 +19,6 @@ default:
       - pdm install --plugins
     
     interruptible: true
-
-
-
-# 
-# Job templates.
-#---------------------------------------------------------------------------------------------------
-.analyzers: &analyzers
-    # Run analyzers on all pipelines.
-    # Use YAML anchors because `extends` is already used in the base job.
-    
-    rules:
-      - when: on_success
-    
-    before_script: []
 
 
 
@@ -98,21 +84,6 @@ test:
             coverage_report:
                 coverage_format: cobertura
                 path: .staging/coverage.xml
-
-
-# semgrep-sast:
-#     # Analyze Python code using Semgrep.
-    
-#     <<: *analyzers
-
-
-# secret_detection:
-#     # Scan repository for secrets.
-    
-#     <<: *analyzers
-    
-#     variables:
-#         SECRET_DETECTION_HISTORIC_SCAN: 'true'
 
 
 
