@@ -1,5 +1,3 @@
-Add names to artifacts
-Expose artifacts in MR
 Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation

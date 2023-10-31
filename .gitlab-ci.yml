@@ -41,8 +41,11 @@ Python Package:
       - echo sdistHash=$(sha256sum *.tar.gz | cut -d ' ' -f 1 ) >> ../package.env
     
     artifacts:
+        name: package
+        expose_as: Package distribution
         paths:
           - .staging/dist/
+        
         reports:
             dotenv: .staging/package.env
 
