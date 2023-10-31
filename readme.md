@@ -31,6 +31,7 @@ For a detailed description of all features check the [documentation](https://mar
 ## 📂 Project Structure
 ```
 📂 Python Project Template
+├─ 📁 .gitlab               GitLab configuration
 ├─ 📁 .staging              Build artifacts and other ignored files
 ├─ 📁 .vscode               VS Code configuration
 ├─ 📁 build                 Build scripts and local PDM plugins
@@ -38,12 +39,13 @@ For a detailed description of all features check the [documentation](https://mar
 │  ├─ 📁 documentation      Sources for TODO documentation
 │  └─ 📁 homepage           Project homepage on GitLab Pages
 ├─ 📁 examples              Examples
-├─ 📁 project_template      Main package
+├─ 📁 project_template      Main package source code
 ├─ 📁 tests                 Tests for the main package
+├─ 🔶 .gitattributes        Git attributes
 ├─ 🔶 .gitignore            Git ignored files
 ├─ 🦊 .gitlab-ci.yml        GitLab CI/CD configuration
 ├─ 🔒 pdm.lock              Dependency lock file
-├─ ⚙️ pyproject.toml        Project metadata and tool configuration
+├─ ⚙️ pyproject.toml        Python project configuration
 ├─ 📄 readme.md             Readme (this file)
 └─ 📜 unlicense.txt         License
 ```

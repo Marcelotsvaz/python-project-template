@@ -1,4 +1,3 @@
-Update dir structure in readme
 Add names to artifacts
 Expose artifacts in MR
 Renovate group major peer dependencies
