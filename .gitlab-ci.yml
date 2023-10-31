@@ -53,16 +53,17 @@ Documentation:
     extends: .buildStage
     
     variables:
-        pages: &pages .staging/pages
+        pagesPublicDir: .staging/pages
+        index: index.html
     
     script:
-      - mkdir -p ${pages}/documentation/
-      - cp doc/homepage/* ${pages}/
-      - cp doc/documentation/* ${pages}/documentation/
+      - mkdir -p ${pagesPublicDir}/documentation/
+      - cp doc/homepage/* ${pagesPublicDir}/
+      - cp doc/documentation/* ${pagesPublicDir}/documentation/
     
     artifacts:
         paths:
-          - *pages
+          - ${pagesPublicDir}
 
 
 
@@ -97,13 +98,11 @@ Documentation Review App:
     
     needs: [ Documentation ]
     
-    variables:
-        pages: *pages
-        index: ${pages}/index.html
+    variables: !reference [ Documentation, variables ]
     
     environment:
         name: review/documentation/${CI_COMMIT_REF_SLUG}
-        url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/${index}
+        url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/${pagesPublicDir}/${index}
     
     artifacts: !reference [ Documentation, artifacts ]
 
@@ -150,10 +149,8 @@ pages:
         name: documentation
         url: ${CI_PAGES_URL}
     
-    publish: *pages # No trailing slash.
-    artifacts:
-        paths:
-          - *pages
+    publish: !reference [ Documentation, variables, pagesPublicDir ] # No trailing slash.
+    artifacts: !reference [ Documentation, artifacts ]
 
 
 
