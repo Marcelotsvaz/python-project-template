@@ -1,5 +1,6 @@
 Add names to artifacts
-Rename doc to docs
+Expose artifacts in MR
+Rename doc/ to docs/
 Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation

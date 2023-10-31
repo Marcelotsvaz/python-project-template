@@ -97,9 +97,13 @@ Documentation Review App:
     
     needs: [ Documentation ]
     
+    variables:
+        pages: *pages
+        index: ${pages}/index.html
+    
     environment:
         name: review/documentation/${CI_COMMIT_REF_SLUG}
-        url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/index.html
+        url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/${index}
     
     artifacts: !reference [ Documentation, artifacts ]
 
