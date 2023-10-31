@@ -58,8 +58,8 @@ Documentation:
     
     script:
       - mkdir -p ${pagesPublicDir}/documentation/
-      - cp doc/homepage/* ${pagesPublicDir}/
-      - cp doc/documentation/* ${pagesPublicDir}/documentation/
+      - cp docs/homepage/* ${pagesPublicDir}/
+      - cp docs/documentation/* ${pagesPublicDir}/documentation/
     
     artifacts:
         paths:

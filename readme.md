@@ -34,7 +34,7 @@ For a detailed description of all features check the [documentation](https://mar
 ├─ 📁 .staging              Build artifacts and other ignored files
 ├─ 📁 .vscode               VS Code configuration
 ├─ 📁 build                 Build scripts and local PDM plugins
-├─ 📂 doc                   Documentation
+├─ 📂 docs                  Documentation
 │  ├─ 📁 documentation      Sources for TODO documentation
 │  └─ 📁 homepage           Project homepage on GitLab Pages
 ├─ 📁 examples              Examples
