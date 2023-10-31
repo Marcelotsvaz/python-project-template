@@ -1,0 +1,8 @@
+- source: /docs/homepage/index.html/
+  public: ''
+
+- source: /docs/homepage/(.+)/
+  public: '/\1'
+
+- source: /docs/documentation/(.+)/
+  public: '/documentation/\1'

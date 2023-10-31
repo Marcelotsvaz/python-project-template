@@ -1,10 +1,16 @@
-GitLab pages direct access Try in MR https://marcelotsvaz.gitlab.io/-/python-project-template/-/jobs/5411316050/artifacts/.staging/pages/index.html
+Update dir structure in readme
+Add names to artifacts
+Expose artifacts in MR
 Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation
 	Builder
 	Docstrings
 	PYPI_API_TOKEN
+	GitLab pages URL rewrite
+	https://gitlab.com/pages/doxygen
+	https://gitlab.com/pages/mkdocs
+	https://gitlab.com/pages/sphinx
 Changelog https://keepachangelog.com/en/1.1.0/
 Sign commits
 Pylint code quality on GitLab
@@ -15,7 +21,6 @@ Logging
 Auto formatting
 git pre-commit hooks
 VSCode devcontainer
-CI/CD Components: https://docs.gitlab.com/ee/ci/components/
 Better development workflow for GitLab; Local runner?
 
 
