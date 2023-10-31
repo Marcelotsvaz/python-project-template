@@ -63,7 +63,7 @@ Documentation:
     
     artifacts:
         paths:
-          - ${pagesPublicDir}
+          - !reference [ Documentation, variables, pagesPublicDir ]
 
 
 
