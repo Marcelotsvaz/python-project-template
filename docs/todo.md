@@ -8,6 +8,9 @@ Documentation
 	Docstrings
 	PYPI_API_TOKEN
 	GitLab pages URL rewrite
+	https://gitlab.com/pages/doxygen
+	https://gitlab.com/pages/mkdocs
+	https://gitlab.com/pages/sphinx
 Changelog https://keepachangelog.com/en/1.1.0/
 Sign commits
 Pylint code quality on GitLab
@@ -18,7 +21,6 @@ Logging
 Auto formatting
 git pre-commit hooks
 VSCode devcontainer
-CI/CD Components: https://docs.gitlab.com/ee/ci/components/
 Better development workflow for GitLab; Local runner?
 
 

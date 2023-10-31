@@ -101,7 +101,7 @@ Documentation Review App:
     variables: !reference [ Documentation, variables ]
     
     environment:
-        name: review/documentation/${CI_COMMIT_REF_SLUG}
+        name: staging/${CI_COMMIT_REF_SLUG}/documentation
         url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/${pagesPublicDir}/${index}
     
     artifacts: !reference [ Documentation, artifacts ]
