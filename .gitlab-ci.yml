@@ -88,6 +88,24 @@ Unit Tests:
 
 
 # 
+# Staging stage.
+#---------------------------------------------------------------------------------------------------
+Documentation Review App:
+    # Deploy documentation as a job artifact and create a Review App for it.
+    
+    extends: .stagingStage
+    
+    needs: [ Documentation ]
+    
+    environment:
+        name: review/documentation/${CI_COMMIT_REF_SLUG}
+        url: https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/index.html
+    
+    artifacts: !reference [ Documentation, artifacts ]
+
+
+
+# 
 # Deploy stage.
 #---------------------------------------------------------------------------------------------------
 GitLab Package Registry:
@@ -125,7 +143,7 @@ pages:
     needs: [ Documentation ]
     
     environment:
-        name: pages
+        name: documentation
         url: ${CI_PAGES_URL}
     
     publish: *pages # No trailing slash.
