@@ -51,7 +51,7 @@ Python Package:
 
 
 Documentation:
-    # Build documentation using TODO.
+    # Build documentation using MkDocs.
     
     extends: .buildStage
     
@@ -61,8 +61,7 @@ Documentation:
     
     script:
       - pdm sync --no-default --group docs
-      - cd docs/
-      - mkdocs build
+      - pdm run docs
     
     artifacts:
         paths:

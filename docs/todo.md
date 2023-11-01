@@ -4,6 +4,9 @@ Documentation
 	VSCode autoDocstring extension
 	PYPI_API_TOKEN
 	GitLab pages URL rewrite
+Run PDM scripts with explicit run
+Check composite PDM scripts
+Check default arguments to PDM Scripts
 Renovate group major peer dependencies
 Changelog https://keepachangelog.com/en/1.1.0/
 Sign commits
