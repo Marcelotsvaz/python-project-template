@@ -60,9 +60,9 @@ Documentation:
         index: index.html
     
     script:
-      - mkdir -p ${pagesPublicDir}/documentation/
-      - cp docs/homepage/* ${pagesPublicDir}/
-      - cp docs/documentation/* ${pagesPublicDir}/documentation/
+      - pdm sync --no-default --group docs
+      - cd docs/
+      - mkdocs build
     
     artifacts:
         paths:
