@@ -1,13 +1,10 @@
-Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation
-	Builder
 	Docstrings
+	VSCode autoDocstring extension
 	PYPI_API_TOKEN
 	GitLab pages URL rewrite
-	https://gitlab.com/pages/doxygen
-	https://gitlab.com/pages/mkdocs
-	https://gitlab.com/pages/sphinx
+Renovate group major peer dependencies
 Changelog https://keepachangelog.com/en/1.1.0/
 Sign commits
 Pylint code quality on GitLab

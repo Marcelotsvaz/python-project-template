@@ -1,0 +1,6 @@
+site_name: Python Project Template
+theme:
+    name: material
+
+docs_dir: src/
+site_dir: ../.staging/pages/
