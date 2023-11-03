@@ -79,7 +79,7 @@ Unit Tests:
     extends: .testStage
     
     script:
-      - pdm sync
+      - pdm sync --group dev
       - pdm test
     
     coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/
