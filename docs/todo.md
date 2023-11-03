@@ -11,7 +11,6 @@ Documentation
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
 	https://squidfunk.github.io/mkdocs-material/customization/#overriding-partials
 	https://github.com/squidfunk/mkdocs-material/blob/9a7a185f9d1d7cc4b47609846deeea26c04bd3b2/src/templates/partials/actions.html#L46
-	Organize pages
 	Cleanup content
 	Cache MkDocs
 	Social plugin

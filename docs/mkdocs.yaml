@@ -15,15 +15,14 @@ edit_uri: -/blob/main/docs/src/
 
 # Layout.
 nav:
-  - index.md
+  - Home: index.md
   - Features:
       - features/index.md
-      - features/installation.md
-      - features/build.md
       - features/dependencies.md
       - features/development.md
       - features/debugging.md
       - features/documentation.md
+      - features/release.md
   - examples.md
   - contributing.md
 

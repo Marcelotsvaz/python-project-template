@@ -1,7 +1,7 @@
 # PyPI URLs
 
 ## From Name
-```javascript
+``` javascript
 fas fa-cloud-download-alt:
 	/^download$/
 fas fa-home:
@@ -52,7 +52,7 @@ fab fa-mastodon:
 
 
 ## From URL
-```javascript
+``` javascript
 fab fa-github:
 	/^github.com$/
 	/^github.io$/

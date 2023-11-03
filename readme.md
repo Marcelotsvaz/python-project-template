@@ -25,7 +25,7 @@ Uses [PDM](https://pdm.fming.dev/) to manage dependencies, build distributions a
 	- Logging
 	- CLI
 
-For a detailed description of all features check the [documentation](https://marcelotsvaz.gitlab.io/python-project-template/documentation/) and the [examples](examples/).
+For a detailed description of all features check the [documentation](https://marcelotsvaz.gitlab.io/python-project-template/documentation/).
 
 
 ## 📂 Project Structure
