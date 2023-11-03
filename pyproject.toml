@@ -27,8 +27,8 @@
 	
 	
 	[project.urls]
-		homepage = 'https://marcelotsvaz.gitlab.io/python-project-template/'
-		documentation = 'https://marcelotsvaz.gitlab.io/python-project-template/documentation/'
+		# homepage = 'https://marcelotsvaz.gitlab.io/python-project-template/'
+		documentation = 'https://marcelotsvaz.gitlab.io/python-project-template/'
 		# changelog = ''
 		issues = 'https://gitlab.com/marcelotsvaz/python-project-template/-/issues'
 		source = 'https://gitlab.com/marcelotsvaz/python-project-template'
@@ -60,7 +60,7 @@
 		]
 		
 		docs = [
-			'mkdocs-material==9.4.7',
+			'mkdocs-material[imaging]==9.4.7',
 		]
 	
 	
