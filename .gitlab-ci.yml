@@ -60,6 +60,7 @@ Documentation:
         index: index.html
     
     script:
+      - apk add --no-cache gcc musl-dev zlib-dev jpeg-dev
       - pdm sync --no-default --group docs
       - pdm run docs
     
