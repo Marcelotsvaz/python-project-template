@@ -9,7 +9,7 @@ site_author: Marcelo Tellier Sartori Vaz
 # Repository.
 repo_name: python-project-template
 repo_url: https://gitlab.com/marcelotsvaz/python-project-template
-edit_uri: -/blob/main/docs/src/
+edit_uri: -/edit/main/docs/src/
 
 
 
@@ -48,6 +48,7 @@ theme:
       - navigation.indexes
       - navigation.top
       - toc.follow
+    custom_dir: overrides
 
 # extra_css: [ stylesheets/extra.css ]
 

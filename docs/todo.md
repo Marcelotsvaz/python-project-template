@@ -1,18 +1,16 @@
+feature/mkdocs
+	View source per environment
+	https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
+	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
+	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
+	Check canonical meta
+	Social plugin
+	Dark mode and colors
+	Render tabs
 Generate XML report for unittests
 Run PDM scripts with explicit run
 Check composite PDM scripts
 Documentation setup:
-	Render tabs
-	View source per environment
-	Dark mode and colors
-	https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
-	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
-	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
-	https://squidfunk.github.io/mkdocs-material/customization/#overriding-partials
-	https://github.com/squidfunk/mkdocs-material/blob/9a7a185f9d1d7cc4b47609846deeea26c04bd3b2/src/templates/partials/actions.html#L46
-	Cache MkDocs
-	Social plugin
-	Check canonical meta
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
 	Docstrings
 	VSCode autoDocstring extension
