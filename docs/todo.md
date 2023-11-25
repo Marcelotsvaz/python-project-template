@@ -1,8 +1,7 @@
 Generate XML report for unittests
-Use custom variables in CI/CD rules instead of CI_ ones.
 Run PDM scripts with explicit run
 Check composite PDM scripts
-Documentation
+Documentation setup:
 	Render tabs
 	View source per environment
 	Dark mode and colors
@@ -11,7 +10,6 @@ Documentation
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
 	https://squidfunk.github.io/mkdocs-material/customization/#overriding-partials
 	https://github.com/squidfunk/mkdocs-material/blob/9a7a185f9d1d7cc4b47609846deeea26c04bd3b2/src/templates/partials/actions.html#L46
-	Cleanup content
 	Cache MkDocs
 	Social plugin
 	Check canonical meta
@@ -19,7 +17,10 @@ Documentation
 	Docstrings
 	VSCode autoDocstring extension
 	PYPI_API_TOKEN
-	GitLab pages URL rewrite
+Documentation write:
+	Mkdocs:
+		Plugins vs extensions
+		Mkdocs vs. Material for Mkdocs
 Check default arguments to PDM Scripts
 Renovate group major peer dependencies
 Changelog https://keepachangelog.com/en/1.1.0/

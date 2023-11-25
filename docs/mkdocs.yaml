@@ -67,7 +67,7 @@ extra:
 
 # Build.
 strict: true
-# use_directory_urls: !ENV [ SITE_NAME, false ] # Staging.
+use_directory_urls: !ENV [ useDirectoryUrls, true ] # False in merge requests to support review apps.
 docs_dir: src/
 site_dir: ../.staging/pages/
 
