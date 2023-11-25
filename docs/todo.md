@@ -1,18 +1,21 @@
 Run PDM scripts with explicit run
 Check composite PDM scripts
+Generate XML report for unittests
 feature/mkdocs
-	View source per environment
 	https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
 	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
 	Dark mode and colors
-	Render tabs
-Generate XML report for unittests
+	View source per environment
 Documentation setup:
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
-	Docstrings
+	Docstrings:
+		accept-no-param-doc = false
+		accept-no-raise-doc = false
+		accept-no-return-doc = false
+		accept-no-yields-doc = false
+		default-docstring-type = 'sphinx', 'epytext', 'google', 'numpy', 'default'
 	VSCode autoDocstring extension
-	PYPI_API_TOKEN
 Documentation write:
 	MkDocs:
 		Plugins vs extensions
@@ -30,11 +33,3 @@ Auto formatting
 git pre-commit hooks
 VSCode devcontainer
 Better development workflow for GitLab; Local runner?
-
-
-
-accept-no-param-doc = false
-accept-no-raise-doc = false
-accept-no-return-doc = false
-accept-no-yields-doc = false
-default-docstring-type = 'sphinx', 'epytext', 'google', 'numpy', 'default'
