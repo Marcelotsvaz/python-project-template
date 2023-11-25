@@ -1,24 +1,22 @@
+Run PDM scripts with explicit run
+Check composite PDM scripts
 feature/mkdocs
 	View source per environment
 	https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
 	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
-	Check canonical meta
-	Social plugin
 	Dark mode and colors
 	Render tabs
 Generate XML report for unittests
-Run PDM scripts with explicit run
-Check composite PDM scripts
 Documentation setup:
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
 	Docstrings
 	VSCode autoDocstring extension
 	PYPI_API_TOKEN
 Documentation write:
-	Mkdocs:
+	MkDocs:
 		Plugins vs extensions
-		Mkdocs vs. Material for Mkdocs
+		MkDocs vs. Material for MkDocs
 Check default arguments to PDM Scripts
 Renovate group major peer dependencies
 Changelog https://keepachangelog.com/en/1.1.0/

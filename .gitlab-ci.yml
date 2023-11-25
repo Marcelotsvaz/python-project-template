@@ -64,14 +64,18 @@ Documentation:
       - pdm sync --no-default --group docs
       - pdm run docs
     
+    artifacts:
+        paths:
+          - !reference [ Documentation, variables, pagesPublicDir ]
+    
+    cache:
+        key: ${CI_COMMIT_REF_SLUG}-mkdocs
+        paths: [ .staging/cache/mkdocs/ ]
+    
     rules:
       - if: $CI_PIPELINE_TYPE == 'merge_request'
         variables:
             useDirectoryUrls: 'false'
-    
-    artifacts:
-        paths:
-          - !reference [ Documentation, variables, pagesPublicDir ]
 
 
 

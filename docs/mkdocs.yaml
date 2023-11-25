@@ -2,7 +2,7 @@
 site_name: Python Project Template
 site_description: Template to quickly bootstrap Python projects.
 site_author: Marcelo Tellier Sartori Vaz
-# site_url: 
+site_url: https://marcelotsvaz.gitlab.io/python-project-template/
 
 
 
@@ -113,4 +113,5 @@ markdown_extensions:
 # Plugins.
 plugins: 
   - search
-#   - social
+  - social:
+        cache_dir: ../.staging/cache/mkdocs/social
