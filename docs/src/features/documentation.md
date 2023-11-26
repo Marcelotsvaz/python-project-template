@@ -66,43 +66,98 @@ class Foo
 ### Configuration
 ``` yaml title='mkdocs.yaml'
 markdown_extensions:
-  - admonition
-  - pymdownx.details # Collapsible admonitions.
+  - pymdownx.blocks.admonition
+  - pymdownx.blocks.details # Collapsible admonitions.
 ```
 
 ### Examples
-!!! example
+/// admonition
+	type: example
+	
 	Lorem ipsum dolor sit amet.
+///
 
-!!! example "Custom Title"
+/// admonition | Custom Title
+	type: example
+	
 	Lorem ipsum dolor sit amet.
+///
 
-??? example "Collapsible"
+/// details | Collapsible
+	type: example
+	
 	Lorem ipsum dolor sit amet.
+///
 
-???+ example "Collapsible (Pre-Expanded)"
+/// details | Collapsible (Pre-Expanded)
+	type: example
+	open: true
+	
 	Lorem ipsum dolor sit amet.
+///
 
-!!! example inline "Custom Title"
+/// admonition | Inline
+	type: example
+	attrs: { class: inline }
+	
 	Lorem ipsum dolor sit amet.
+///
 
-!!! example "Custom Title"
+/// admonition | Inline
+	type: example
+	
 	Lorem ipsum dolor sit amet.
+///
 
 
 ### Types
-!!! abstract
-!!! bug
-!!! danger
-!!! example
-!!! failure
-!!! info
-!!! note
-!!! question
-!!! quote
-!!! success
-!!! tip
-!!! warning
+/// admonition
+	type: abstract
+///
+
+/// admonition
+	type: bug
+///
+
+/// admonition
+	type: danger
+///
+
+/// admonition
+	type: example
+///
+
+/// admonition
+	type: failure
+///
+
+/// admonition
+	type: info
+///
+
+/// admonition
+	type: note
+///
+
+/// admonition
+	type: question
+///
+
+/// admonition
+	type: quote
+///
+
+/// admonition
+	type: success
+///
+
+/// admonition
+	type: tip
+///
+
+/// admonition
+	type: warning
+///
 
 
 
@@ -164,13 +219,13 @@ theme:
       - content.tabs.link
 
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-        alternate_style: true
+  - pymdownx.blocks.tab:
+		alternate_style: true
 ```
 
 ### Examples
-=== "C"
+/// tab | C
+	
 	``` c
 	#include <stdio.h>
 	
@@ -181,8 +236,10 @@ markdown_extensions:
 		return 0;
 	}
 	```
+///
 
-=== "C++"
+/// tab | C++
+	
 	``` c++
 	#include <iostream>
 	
@@ -193,6 +250,7 @@ markdown_extensions:
 		return 0;
 	}
 	```
+///
 
 
 
@@ -233,9 +291,12 @@ markdown_extensions:
 ```
 
 ### Examples
-!!! example
+/// admonition | Nested Blocks
+	type: example
+	
 	Lorem ipsum dolor sit amet.
 	
 	```python title='Nested Block'
 	print( 'foo' )
 	```
+///

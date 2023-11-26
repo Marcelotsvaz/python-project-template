@@ -2,10 +2,10 @@ Run PDM scripts with explicit run
 Check composite PDM scripts
 Generate XML report for unittests
 feature/mkdocs
-	https://facelessuser.github.io/pymdown-extensions/extensions/blocks/
+	Use pymdown-extensions theme
+	Dark mode and colors
 	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
-	Dark mode and colors
 	View source per environment
 Documentation setup:
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
@@ -18,6 +18,7 @@ Documentation setup:
 	VSCode autoDocstring extension
 Documentation write:
 	MkDocs:
+		Generalize blocks
 		Plugins vs extensions
 		MkDocs vs. Material for MkDocs
 Check default arguments to PDM Scripts
