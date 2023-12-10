@@ -8,6 +8,4 @@
 		'marcelotsvaz/renovate-runner:default.json5/prettyUpdateType',
 		'marcelotsvaz/renovate-runner:default.json5/prettyDepType',
 	],
-	
-	assignees: [ 'marcelotsvaz' ],
 }
