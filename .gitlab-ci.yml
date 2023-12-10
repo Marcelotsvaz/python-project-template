@@ -1,8 +1,9 @@
 include:
-  - component: gitlab.com/marcelotsvaz/gitlab/sane-workflow@main
-  - component: gitlab.com/marcelotsvaz/gitlab/stages@main
-  - component: gitlab.com/marcelotsvaz/gitlab/sast@main
-  - component: gitlab.com/marcelotsvaz/gitlab/secret-detection@main
+  - component: gitlab.com/marcelotsvaz/gitlab/sane-workflow@1.0.0
+  - component: gitlab.com/marcelotsvaz/gitlab/stages@1.0.0
+  - component: gitlab.com/marcelotsvaz/gitlab/sast@1.0.0
+  - component: gitlab.com/marcelotsvaz/gitlab/secret-detection@1.0.0
+  - component: gitlab.com/marcelotsvaz/gitlab/release@1.0.0
 
 
 variables:
@@ -17,8 +18,6 @@ default:
       - apk add --no-cache git
       - pip install --no-cache-dir pdm
       - pdm install --plugins
-    
-    interruptible: true
 
 
 
@@ -161,17 +160,9 @@ pages:
 # Release stage.
 #---------------------------------------------------------------------------------------------------
 GitLab Release:
-    # Create GitLab release as last step in the pipeline.
-    
-    extends: .releaseStage
-    
-    image: registry.gitlab.com/gitlab-org/release-cli:latest@sha256:5a71acbadc47c1971100f5246b09f88ba09e84ebe7769e425475dce85245a2bf
-    
     before_script: []
     
     release:
-        tag_name: ${CI_COMMIT_TAG}
-        description: ${CI_COMMIT_TAG}
         assets:
             links:
               - name: Documentation
