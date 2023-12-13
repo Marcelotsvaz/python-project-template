@@ -36,9 +36,6 @@ validation:
 # Theme.
 theme:
     name: material
-    icon:
-        logo: simple/python
-        repo: simple/gitlab
     features:
       - content.action.view
       - content.code.annotate
@@ -48,7 +45,21 @@ theme:
       - navigation.indexes
       - navigation.top
       - toc.follow
+    icon:
+        logo: simple/python
+        repo: simple/gitlab
     custom_dir: overrides
+    palette:
+      - scheme: default
+        media: '(prefers-color-scheme: light)'
+        toggle:
+            name: Switch to dark mode
+            icon: material/weather-night
+      - scheme: slate
+        media: '(prefers-color-scheme: dark)'
+        toggle:
+            name: Switch to light mode
+            icon: material/weather-sunny
 
 extra:
     social:
@@ -79,7 +90,6 @@ markdown_extensions:
   - attr_list
   - toc:
         permalink: '#'
-    
     # PyMdown Extensions.
   - pymdownx.blocks.admonition
   - pymdownx.blocks.details

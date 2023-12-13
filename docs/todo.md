@@ -2,8 +2,6 @@ Run PDM scripts with explicit run
 Check composite PDM scripts
 Generate XML report for unittests
 feature/mkdocs
-	Use pymdown-extensions theme
-	Dark mode and colors
 	https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#additional-icons
 	https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_gitlab.svg
 	View source per environment
