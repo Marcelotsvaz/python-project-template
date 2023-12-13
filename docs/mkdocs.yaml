@@ -23,6 +23,7 @@ nav:
       - features/debugging.md
       - features/documentation.md
       - features/release.md
+  - structure.md
   - examples.md
   - contributing.md
 
@@ -93,6 +94,7 @@ markdown_extensions:
     # PyMdown Extensions.
   - pymdownx.blocks.admonition
   - pymdownx.blocks.details
+  - pymdownx.blocks.html
   - pymdownx.blocks.tab:
         alternate_style: true
   - pymdownx.caret
@@ -100,6 +102,9 @@ markdown_extensions:
   - pymdownx.emoji:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        options:
+            custom_icons:
+              - overrides/.icons
   - pymdownx.highlight:
         anchor_linenums: true
         linenums_style: pymdownx-inline
