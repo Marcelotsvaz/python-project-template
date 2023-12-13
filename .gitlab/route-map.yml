@@ -1,8 +1,5 @@
-- source: /docs/homepage/index.html/
-  public: ''
+  - source: /docs\/src\/(.+\/|)index\.md/
+    public: \1
 
-- source: /docs/homepage/(.+)/
-  public: '/\1'
-
-- source: /docs/documentation/(.+)/
-  public: '/documentation/\1'
+  - source: /docs\/src\/(.+)\.md/
+    public: \1

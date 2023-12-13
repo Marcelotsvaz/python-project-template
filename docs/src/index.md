@@ -1,4 +1,6 @@
 # 🐍 Python Project Template
 Template to quickly bootstrap Python projects.
 
-!!! warning "Work in Progress"
+/// admonition | Work in Progress
+	type: warning
+///
