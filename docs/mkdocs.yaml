@@ -87,18 +87,18 @@ site_dir: ../.staging/pages/
 # Extensions.
 markdown_extensions:
     # Python Markdown.
-  - abbr
-  - attr_list
+  - abbr: {}
+  - attr_list: {}
   - toc:
         permalink: '#'
     # PyMdown Extensions.
-  - pymdownx.blocks.admonition
-  - pymdownx.blocks.details
-  - pymdownx.blocks.html
+  - pymdownx.blocks.admonition: {}
+  - pymdownx.blocks.details: {}
+  - pymdownx.blocks.html: {}
   - pymdownx.blocks.tab:
         alternate_style: true
-  - pymdownx.caret
-  - pymdownx.critic
+  - pymdownx.caret: {}
+  - pymdownx.critic: {}
   - pymdownx.emoji:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -109,9 +109,9 @@ markdown_extensions:
         anchor_linenums: true
         linenums_style: pymdownx-inline
         pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
+  - pymdownx.inlinehilite: {}
+  - pymdownx.keys: {}
+  - pymdownx.mark: {}
   - pymdownx.snippets:
         auto_append: [ include/abbreviations.md ]
   - pymdownx.superfences:
@@ -119,12 +119,12 @@ markdown_extensions:
         disable_indented_code_blocks: true
   - pymdownx.tasklist:
         custom_checkbox: true
-  - pymdownx.tilde
+  - pymdownx.tilde: {}
 
 
 
 # Plugins.
 plugins: 
-  - search
+  - search: {}
   - social:
         cache_dir: ../.staging/cache/mkdocs/social
