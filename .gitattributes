@@ -1,2 +1,6 @@
+*.yaml linguist-detectable
+*.yml linguist-detectable
+*.toml linguist-detectable
+
 # Hide in GitLab diff.
 pdm.lock -diff
