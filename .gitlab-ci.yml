@@ -58,6 +58,7 @@ Documentation:
     variables:
         pagesPublicDir: .staging/pages
         index: index.html
+        editUri: -/edit/${CI_COMMIT_REF_NAME}/docs/src/
     
     script:
       - apk add --no-cache gcc musl-dev zlib-dev jpeg-dev cairo

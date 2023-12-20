@@ -9,7 +9,7 @@ site_url: https://marcelotsvaz.gitlab.io/python-project-template/
 # Repository.
 repo_name: python-project-template
 repo_url: https://gitlab.com/marcelotsvaz/python-project-template
-edit_uri: -/edit/main/docs/src/
+edit_uri: !ENV [ editUri, -/edit/main/docs/src/ ]
 
 
 

@@ -1,8 +1,6 @@
 Run PDM scripts with explicit run
 Check composite PDM scripts
 Generate XML report for unittests
-feature/mkdocs
-	View source per environment
 Documentation setup:
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
 	Docstrings:
