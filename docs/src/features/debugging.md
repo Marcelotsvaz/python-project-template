@@ -5,7 +5,7 @@ TODO: Debugging with VS Code.
 ## Unit Tests and Code Coverage
 Run tests and print coverage report with PDM script:
 ``` sh
-pdm run test
+pdm run test --coverage
 ```
 
 Above command is equivalent to:

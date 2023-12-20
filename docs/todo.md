@@ -1,4 +1,3 @@
-Check composite PDM scripts
 Check default arguments to PDM Scripts
 Changelog https://keepachangelog.com/en/1.1.0/
 Logging

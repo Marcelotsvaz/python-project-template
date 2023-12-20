@@ -65,22 +65,11 @@
 	
 	
 	[tool.pdm.scripts]
-		test.composite = [ 'coverage', 'coverage-report' ]
-		test.help = 'Run tests with code coverage and show coverage report.'
-		
-		coverage.shell = 'coverage run -m ${unittestCommand}'
-		coverage.help = 'Run tests with code coverage.'
-		
-		coverage-report.shell = 'coverage report; coverage xml'
-		coverage-report.help = 'Show coverage report.'
-		
-		test-only.shell = 'python -m ${unittestCommand}'
-		test-only.help = 'Run tests without code coverage.'
+		test.shell = 'build/test.fish'
+		test.help = 'Run tests with code coverage.'
 		
 		docs.shell = 'cd docs/ && mkdocs build'
 		docs.help = 'Build documentation with MkDocs.'
-		
-		_.env.unittestCommand = 'unittest discover --pattern *_tests.py --start-directory tests/ --verbose'
 
 
 

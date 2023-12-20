@@ -88,8 +88,9 @@ Unit Tests:
     extends: .testStage
     
     script:
+      - apk add fish
       - pdm sync --group dev
-      - pdm run test
+      - pdm run test --coverage
     
     coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/
     artifacts:
