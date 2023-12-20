@@ -7,4 +7,16 @@
 		"--start-directory=tests/",
 		"--verbose",
 	],
+	
+	"yaml.schemas": {
+		"https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": "/templates/*.yml",
+		"https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/schema.json": "mkdocs.yaml",
+	},
+	"yaml.customTags": [
+		"!ENV scalar",
+		"!ENV sequence",
+		"tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+		"tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+		"tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+	],
 }

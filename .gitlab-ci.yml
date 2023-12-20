@@ -12,7 +12,7 @@ variables:
 
 
 default:
-    image: python:3.12.0-alpine3.18@sha256:a5d1738d6abbdff3e81c10b7f86923ebcb340ca536e21e8c5ee7d938d263dba1
+    image: python:3.11.6-alpine3.18@sha256:527e0b0d92686a3ab1af3e65fdef12a47a9359f298dfd9b8d36617808d4029e9
     
     before_script:
       - apk add --no-cache git
@@ -50,22 +50,32 @@ Python Package:
 
 
 Documentation:
-    # Build documentation using TODO.
+    # Build documentation using MkDocs.
     
     extends: .buildStage
     
     variables:
         pagesPublicDir: .staging/pages
         index: index.html
+        editUri: -/edit/${CI_COMMIT_REF_NAME}/docs/src/
     
     script:
-      - mkdir -p ${pagesPublicDir}/documentation/
-      - cp docs/homepage/* ${pagesPublicDir}/
-      - cp docs/documentation/* ${pagesPublicDir}/documentation/
+      - apk add --no-cache gcc musl-dev zlib-dev jpeg-dev cairo
+      - pdm sync --no-default --group docs
+      - pdm run docs
     
     artifacts:
         paths:
           - !reference [ Documentation, variables, pagesPublicDir ]
+    
+    cache:
+        key: ${CI_COMMIT_REF_SLUG}-mkdocs
+        paths: [ .staging/cache/mkdocs/ ]
+    
+    rules:
+      - if: $CI_PIPELINE_TYPE == 'merge_request'
+        variables:
+            useDirectoryUrls: 'false'
 
 
 
@@ -78,7 +88,7 @@ Unit Tests:
     extends: .testStage
     
     script:
-      - pdm sync
+      - pdm sync --group dev
       - pdm test
     
     coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/

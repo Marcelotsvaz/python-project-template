@@ -27,8 +27,8 @@
 	
 	
 	[project.urls]
-		homepage = 'https://marcelotsvaz.gitlab.io/python-project-template/'
-		documentation = 'https://marcelotsvaz.gitlab.io/python-project-template/documentation/'
+		# homepage = 'https://marcelotsvaz.gitlab.io/python-project-template/'
+		documentation = 'https://marcelotsvaz.gitlab.io/python-project-template/'
 		# changelog = ''
 		issues = 'https://gitlab.com/marcelotsvaz/python-project-template/-/issues'
 		source = 'https://gitlab.com/marcelotsvaz/python-project-template'
@@ -51,11 +51,17 @@
 [tool.pdm]
 	version.source = 'scm'
 	plugins = [ '-e ./build' ]
-	dev-dependencies.dev = [
-		'coverage==7.3.2',
-		'pdm-backend==2.1.7',
-		'pylint==2.17.7',
-	]
+	
+	[tool.pdm.dev-dependencies]
+		dev = [
+			'coverage==7.3.2',
+			'pdm-backend==2.1.7',
+			'pylint==2.17.7',
+		]
+		
+		docs = [
+			'mkdocs-material[imaging]==9.4.7',
+		]
 	
 	
 	[tool.pdm.scripts]
@@ -70,6 +76,9 @@
 		
 		test-only.shell = 'python -m ${unittestCommand}'
 		test-only.help = 'Run tests without code coverage.'
+		
+		docs.shell = 'cd docs/ && mkdocs build'
+		docs.help = 'Build documentation with MkDocs.'
 		
 		_.env.unittestCommand = 'unittest discover --pattern *_tests.py --start-directory tests/ --verbose'
 

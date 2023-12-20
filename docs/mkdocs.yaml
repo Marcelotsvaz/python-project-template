@@ -1,0 +1,130 @@
+# Project information.
+site_name: Python Project Template
+site_description: Template to quickly bootstrap Python projects.
+site_author: Marcelo Tellier Sartori Vaz
+site_url: https://marcelotsvaz.gitlab.io/python-project-template/
+
+
+
+# Repository.
+repo_name: python-project-template
+repo_url: https://gitlab.com/marcelotsvaz/python-project-template
+edit_uri: !ENV [ editUri, -/edit/main/docs/src/ ]
+
+
+
+# Layout.
+nav:
+  - Home: index.md
+  - Features:
+      - features/index.md
+      - features/dependencies.md
+      - features/development.md
+      - features/debugging.md
+      - features/documentation.md
+      - features/release.md
+  - structure.md
+  - examples.md
+  - contributing.md
+
+validation:
+    omitted_files: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+
+
+# Theme.
+theme:
+    name: material
+    features:
+      - content.action.view
+      - content.code.annotate
+      - content.code.copy
+      - content.tabs.link
+      - navigation.footer
+      - navigation.indexes
+      - navigation.top
+      - toc.follow
+    icon:
+        logo: simple/python
+        repo: simple/gitlab
+    custom_dir: overrides
+    palette:
+      - scheme: default
+        media: '(prefers-color-scheme: light)'
+        toggle:
+            name: Switch to dark mode
+            icon: material/weather-night
+      - scheme: slate
+        media: '(prefers-color-scheme: dark)'
+        toggle:
+            name: Switch to light mode
+            icon: material/weather-sunny
+
+extra:
+    social:
+      - name: Project on GitLab
+        icon: simple/gitlab
+        link: https://gitlab.com/marcelotsvaz/python-project-template
+      - name: Project on GitHub
+        icon: simple/github
+        link: https://github.com/Marcelotsvaz/python-project-template
+      - name: Package on PyPI
+        icon: simple/pypi
+        link: https://pypi.org/project/marcelotsvaz-python-project-template/
+
+
+
+# Build.
+strict: true
+use_directory_urls: !ENV [ useDirectoryUrls, true ] # False in merge requests to support review apps.
+docs_dir: src/
+site_dir: ../.staging/pages/
+
+
+
+# Extensions.
+markdown_extensions:
+    # Python Markdown.
+  - abbr: {}
+  - attr_list: {}
+  - toc:
+        permalink: '#'
+    # PyMdown Extensions.
+  - pymdownx.blocks.admonition: {}
+  - pymdownx.blocks.details: {}
+  - pymdownx.blocks.html: {}
+  - pymdownx.blocks.tab:
+        alternate_style: true
+  - pymdownx.caret: {}
+  - pymdownx.critic: {}
+  - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        options:
+            custom_icons:
+              - overrides/.icons
+  - pymdownx.highlight:
+        anchor_linenums: true
+        linenums_style: pymdownx-inline
+        pygments_lang_class: true
+  - pymdownx.inlinehilite: {}
+  - pymdownx.keys: {}
+  - pymdownx.mark: {}
+  - pymdownx.snippets:
+        auto_append: [ include/abbreviations.md ]
+  - pymdownx.superfences:
+        preserve_tabs: true
+        disable_indented_code_blocks: true
+  - pymdownx.tasklist:
+        custom_checkbox: true
+  - pymdownx.tilde: {}
+
+
+
+# Plugins.
+plugins: 
+  - search: {}
+  - social:
+        cache_dir: ../.staging/cache/mkdocs/social
