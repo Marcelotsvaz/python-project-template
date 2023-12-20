@@ -25,8 +25,8 @@
 					"value": "install --dev",
 				},
 				{
-					"label": "🧪 Run tests",
-					"value": "test",
+					"label": "🧪 Test",
+					"value": "run test",
 				},
 				{
 					"label": "🛠️ Build",

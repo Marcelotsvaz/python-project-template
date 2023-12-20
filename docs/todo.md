@@ -1,5 +1,9 @@
-Run PDM scripts with explicit run
 Check composite PDM scripts
+Check default arguments to PDM Scripts
+Changelog https://keepachangelog.com/en/1.1.0/
+Logging
+
+Renovate group major peer dependencies
 Generate XML report for unittests
 Documentation setup:
 	https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
@@ -15,15 +19,11 @@ Documentation write:
 		Generalize blocks
 		Plugins vs extensions
 		MkDocs vs. Material for MkDocs
-Check default arguments to PDM Scripts
-Renovate group major peer dependencies
-Changelog https://keepachangelog.com/en/1.1.0/
 Sign commits
 Pylint code quality on GitLab
 Pylint --allow-reexport-from-package
 Check argparse return values
 Format imports
-Logging
 Auto formatting
 git pre-commit hooks
 VSCode devcontainer

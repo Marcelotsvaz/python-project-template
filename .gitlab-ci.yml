@@ -89,7 +89,7 @@ Unit Tests:
     
     script:
       - pdm sync --group dev
-      - pdm test
+      - pdm run test
     
     coverage: /^TOTAL.+?(\d+(?:\.\d+)?\%)$/
     artifacts:
