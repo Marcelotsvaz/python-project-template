@@ -76,6 +76,7 @@ Documentation:
       - if: $CI_PIPELINE_TYPE == 'merge_request'
         variables:
             useDirectoryUrls: 'false'
+      - when: on_success
 
 
 
