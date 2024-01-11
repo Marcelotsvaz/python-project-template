@@ -1,5 +1,6 @@
+https://github.com/pdm-project/pdm/pull/2394
+https://github.com/pdm-project/pdm/pull/2408
 Check default arguments to PDM Scripts
-Changelog https://keepachangelog.com/en/1.1.0/
 Logging
 
 Renovate group major peer dependencies
