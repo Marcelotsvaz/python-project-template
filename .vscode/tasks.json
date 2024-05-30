@@ -10,8 +10,8 @@
 				"id": "symbol-function",
 				"color": "terminal.ansiMagenta"
 			},
-			"problemMatcher": []
-		}
+			"problemMatcher": [],
+		},
 	],
 	
 	"inputs": [

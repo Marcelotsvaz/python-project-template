@@ -4,7 +4,7 @@
 	"configurations": [
 		{
 			"name": "Package entry point",
-			"type": "python",
+			"type": "debugpy",
 			"request": "launch",
 			"module": "project_template",
 			"args": [
@@ -20,7 +20,7 @@
 		
 		{
 			"name": "Examples",
-			"type": "python",
+			"type": "debugpy",
 			"request": "launch",
 			"program": "examples/example1.py",
 			"justMyCode": false,
@@ -32,7 +32,7 @@
 		
 		{
 			"name": "Tests",
-			"type": "python",
+			"type": "debugpy",
 			"request": "launch",
 			"purpose": [ "debug-test" ],
 			"justMyCode": false,
